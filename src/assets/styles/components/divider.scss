@@ -1,0 +1,71 @@
+/* ============================================================
+   Bedrock UI · Divider
+   CSS only: horizontal / vertical, solid / dashed / gradient,
+   labeled alignment. No Element Plus dependency.
+   ============================================================ */
+
+.bd-divider {
+  --bd-divider-color: var(--bedrock-line-2);
+  width: 100%;
+  height: 1px;
+  border: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--bd-divider-color) 14%,
+    var(--bd-divider-color) 86%,
+    transparent
+  );
+}
+.bd-divider--solid { background: var(--bd-divider-color); }
+.bd-divider--dashed {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--bd-divider-color) 0 6px,
+    transparent 6px 12px
+  );
+}
+
+.bd-divider--labeled {
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: none;
+  color: var(--bedrock-text-3);
+  font-size: var(--bedrock-fs-caption);
+  letter-spacing: .12em;
+  white-space: nowrap;
+}
+.bd-divider--labeled::before,
+.bd-divider--labeled::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--bd-divider-color));
+}
+.bd-divider--labeled::after {
+  background: linear-gradient(90deg, var(--bd-divider-color), transparent);
+}
+.bd-divider--labeled.bd-divider--solid::before,
+.bd-divider--labeled.bd-divider--solid::after { background: var(--bd-divider-color); }
+.bd-divider--labeled.bd-divider--dashed::before,
+.bd-divider--labeled.bd-divider--dashed::after {
+  background: repeating-linear-gradient(90deg, var(--bd-divider-color) 0 6px, transparent 6px 12px);
+}
+.bd-divider--left::before { flex: 0 0 18px; }
+.bd-divider--right::after { flex: 0 0 18px; }
+
+.bd-divider--vertical {
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  padding: 0;
+  margin: 0 2px;
+  background: var(--bd-divider-color);
+  vertical-align: middle;
+}
+
+.bd-divider--vertical.bd-divider--dashed {
+  background: repeating-linear-gradient(180deg, var(--bd-divider-color) 0 3px, transparent 3px 6px);
+}

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1024" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#03070c"/>
+      <stop offset=".55" stop-color="#06131f"/>
+      <stop offset="1" stop-color="#040a10"/>
+    </linearGradient>
+    <radialGradient id="auroraA" cx=".72" cy=".18" r=".62">
+      <stop offset="0" stop-color="#6aa8ff" stop-opacity=".58"/>
+      <stop offset=".42" stop-color="#2563eb" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#2563eb" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="auroraB" cx=".38" cy=".38" r=".52">
+      <stop offset="0" stop-color="#3fe0cf" stop-opacity=".28"/>
+      <stop offset=".55" stop-color="#1fa4b8" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#1fa4b8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="band" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2563eb" stop-opacity="0"/>
+      <stop offset=".3" stop-color="#4d9cff" stop-opacity=".4"/>
+      <stop offset=".55" stop-color="#3fe0cf" stop-opacity=".28"/>
+      <stop offset=".8" stop-color="#7c8cff" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#6366f1" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="veil" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#04090e" stop-opacity="0"/>
+      <stop offset=".7" stop-color="#04090e" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#04090e" stop-opacity=".72"/>
+    </linearGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="#8dc2ff" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+    <filter id="blur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="48"/>
+    </filter>
+    <filter id="bandBlur" x="-30%" y="-60%" width="160%" height="220%">
+      <feGaussianBlur stdDeviation="34"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".045"/></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1792" height="1024" fill="url(#base)"/>
+  <g filter="url(#blur)">
+    <ellipse cx="1290" cy="180" rx="540" ry="290" fill="url(#auroraA)"/>
+    <ellipse cx="680" cy="390" rx="460" ry="240" fill="url(#auroraB)"/>
+  </g>
+  <g filter="url(#bandBlur)" opacity=".9">
+    <path d="M 300 900 C 620 540 860 720 1080 460 S 1440 220 1780 260" fill="none" stroke="url(#band)" stroke-width="210"/>
+    <path d="M -100 700 C 280 520 520 780 820 560 S 1300 340 1880 390" fill="none" stroke="url(#band)" stroke-width="80" opacity=".7"/>
+  </g>
+  <g fill="#d8ecff">
+    <circle cx="240" cy="170" r="1.2" opacity=".35"/>
+    <circle cx="420" cy="96" r="1" opacity=".25"/>
+    <circle cx="610" cy="220" r="1.4" opacity=".3"/>
+    <circle cx="1020" cy="120" r="1" opacity=".22"/>
+    <circle cx="1240" cy="300" r="1.3" opacity=".28"/>
+    <circle cx="1470" cy="150" r="1" opacity=".2"/>
+    <circle cx="1650" cy="360" r="1.2" opacity=".22"/>
+    <circle cx="760" cy="160" r=".9" opacity=".18"/>
+  </g>
+  <rect width="1792" height="1024" fill="url(#grid)"/>
+  <rect width="1792" height="1024" filter="url(#grain)" opacity=".55"/>
+  <rect width="1792" height="1024" fill="url(#veil)"/>
+</svg>

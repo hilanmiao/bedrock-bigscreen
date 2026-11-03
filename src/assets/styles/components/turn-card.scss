@@ -1,0 +1,68 @@
+/* Bedrock UI · Two-sided turn card */
+.bd-turn {
+  --bd-turn-h: 168px;
+  position: relative;
+  height: var(--bd-turn-h);
+  perspective: 900px;
+  outline: none;
+}
+.bd-turn:focus-visible { outline: 1px solid var(--bedrock-primary-line); outline-offset: 3px; }
+.bd-turn__inner {
+  position: relative;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .65s cubic-bezier(.2, .7, .2, 1);
+}
+.bd-turn:hover .bd-turn__inner,
+.bd-turn:focus-visible .bd-turn__inner,
+.bd-turn--flipped .bd-turn__inner { transform: rotateY(180deg); }
+.bd-turn--x:hover .bd-turn__inner,
+.bd-turn--x:focus-visible .bd-turn__inner,
+.bd-turn--x.bd-turn--flipped .bd-turn__inner { transform: rotateX(180deg); }
+.bd-turn__face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 16px;
+  overflow: hidden;
+  border: 1px solid var(--bedrock-line-1);
+  border-radius: 4px;
+  background: linear-gradient(145deg, rgba(20, 48, 68, .5), rgba(7, 18, 26, .62));
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.bd-turn__face--back {
+  transform: rotateY(180deg);
+  border-color: var(--bedrock-primary-line);
+  background: linear-gradient(145deg, rgba(20, 48, 68, .72), rgba(5, 13, 21, .9));
+}
+.bd-turn--x .bd-turn__face--back { transform: rotateX(180deg); }
+.bd-turn__eyebrow { font-size: var(--bedrock-fs-caption); letter-spacing: .1em; color: var(--bedrock-text-4); }
+.bd-turn__title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--bedrock-fs-title); color: var(--bedrock-text-1); }
+.bd-turn__value { font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-metric); line-height: 1; color: var(--bedrock-text-1); }
+.bd-turn__unit { margin-left: 4px; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-turn__meta { font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-turn__status { display: inline-flex; align-items: center; gap: 5px; font-size: var(--bedrock-fs-caption); color: var(--bedrock-success); }
+.bd-turn__status::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 5px rgba(var(--bedrock-success-rgb), .4);
+}
+.bd-turn__status--warn { color: var(--bedrock-warning); }
+.bd-turn__status--warn::before { box-shadow: 0 0 5px rgba(var(--bedrock-warning-rgb), .4); }
+.bd-turn__status--error { color: var(--bedrock-danger); }
+.bd-turn__status--error::before { box-shadow: 0 0 5px rgba(var(--bedrock-danger-rgb), .4); }
+.bd-turn__rows { display: flex; flex-direction: column; gap: 6px; margin-top: auto; }
+.bd-turn__row { display: flex; justify-content: space-between; gap: 10px; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-turn__row b { font-family: var(--bedrock-font-num); font-weight: 500; color: var(--bedrock-text-1); }
+.bd-turn__hint { margin-top: auto; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-turn__face--back .bd-turn__hint { margin-top: 0; }
+.bd-turn--sm { --bd-turn-h: 136px; }
+.bd-turn--sm .bd-turn__value { font-size: var(--bedrock-fs-subhead); }
+.bd-turn--lg { --bd-turn-h: 208px; }
+.bd-turn--lg .bd-turn__value { font-size: var(--bedrock-fs-metric-lg); }

@@ -1,0 +1,7 @@
+/* Bedrock UI · Tooltip (Element Plus restyle) */
+.el-popper.bd-tooltip-popper { border: 1px solid var(--bedrock-line-2); border-radius: 3px; background: rgba(6, 14, 21, .97); color: var(--bedrock-text-2); box-shadow: 0 14px 34px rgba(0, 0, 0, .45); }
+.el-popper.bd-tooltip-popper .el-popper__arrow::before { border-color: var(--bedrock-line-2); background: rgba(6, 14, 21, .97); }
+.el-popper.bd-tooltip-popper--accent { border-color: var(--bedrock-accent-line); background: rgba(24, 17, 8, .98); color: var(--bedrock-text-1); }
+.el-popper.bd-tooltip-popper--danger { border-color: rgba(251, 113, 133, .42); background: rgba(30, 8, 13, .98); color: #ffe4e8; }
+.bd-tooltip__title { display: block; margin-bottom: 3px; font-size: var(--bedrock-fs-caption); font-weight: 600; color: var(--bedrock-text-1); }
+.bd-tooltip__desc { display: block; font-size: var(--bedrock-fs-caption); line-height: 1.55; color: var(--bedrock-text-3); }

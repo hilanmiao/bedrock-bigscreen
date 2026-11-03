@@ -1,0 +1,15 @@
+/* Bedrock UI · Timeline */
+.bd-timeline { display: flex; flex-direction: column; }
+.bd-timeline__item { position: relative; display: flex; flex-direction: column; gap: 3px; padding: 0 0 18px 20px; border-left: 1px solid var(--bedrock-line-2); }
+.bd-timeline__item:last-child { padding-bottom: 0; border-left-color: transparent; }
+.bd-timeline__dot { position: absolute; left: -4px; top: 2px; width: 7px; height: 7px; border-radius: 50%; background: var(--bedrock-primary); box-shadow: 0 0 5px rgba(var(--bedrock-primary-rgb), .4); }
+.bd-timeline__item--warn .bd-timeline__dot { background: var(--bedrock-warning); box-shadow: 0 0 5px rgba(var(--bedrock-warning-rgb), .4); }
+.bd-timeline__item--error .bd-timeline__dot { background: var(--bedrock-danger); box-shadow: 0 0 5px rgba(var(--bedrock-danger-rgb), .4); }
+.bd-timeline__time { font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-timeline__title { font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-2); }
+.bd-timeline__desc { font-size: var(--bedrock-fs-caption); line-height: 1.55; color: var(--bedrock-text-4); }
+.bd-timeline--horizontal { flex-direction: row; gap: 0; }
+.bd-timeline--horizontal .bd-timeline__item { flex: 1; min-width: 0; padding: 16px 12px 0 0; border-left: 0; border-top: 1px solid var(--bedrock-line-2); }
+.bd-timeline--horizontal .bd-timeline__dot { left: 0; top: -4px; }
+.bd-timeline--compact .bd-timeline__item { padding-bottom: 12px; padding-left: 16px; }
+.bd-timeline--compact .bd-timeline__desc { display: none; }

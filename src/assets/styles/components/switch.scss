@@ -1,0 +1,12 @@
+/* Bedrock UI · Switch (Element Plus restyle) */
+.el-switch.bd-switch {
+  --el-switch-on-color: var(--bedrock-primary);
+  --el-switch-off-color: var(--bedrock-line-3);
+}
+.bd-switch-row { display: flex; align-items: center; gap: 12px; padding: 9px 11px; border: 1px solid var(--bedrock-line-1); border-radius: 3px; background: rgba(6, 16, 24, .4); }
+.bd-switch-row + .bd-switch-row { margin-top: 8px; }
+.bd-switch-row__text { flex: 1; min-width: 0; }
+.bd-switch-row__label { display: block; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-1); }
+.bd-switch-row__desc { display: block; margin-top: 2px; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-switch-row__state { flex: none; font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-switch-row--disabled { opacity: .45; }

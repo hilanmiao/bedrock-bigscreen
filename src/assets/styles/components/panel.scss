@@ -1,0 +1,122 @@
+/* ============================================================
+   Bedrock UI · Panel
+   CSS only: line / bracket / cut frames, three densities,
+   default / info / warn / error states. No Element Plus dependency.
+   ============================================================ */
+
+.bd-panel {
+  --bd-panel-accent: var(--bedrock-primary);
+  --bd-panel-rgb: var(--bedrock-primary-rgb);
+  --bd-panel-pad: 16px;
+  --bd-panel-head: 42px;
+  --bd-panel-cut: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--bedrock-line-1);
+  border-radius: 4px;
+  background: linear-gradient(180deg, rgba(12, 30, 44, .72), rgba(5, 13, 21, .84));
+}
+.bd-panel__head {
+  height: var(--bd-panel-head);
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 var(--bd-panel-pad);
+  border-bottom: 1px solid var(--bedrock-line-1);
+  background: rgba(7, 18, 27, .45);
+}
+.bd-panel__head::before {
+  content: "";
+  flex: none;
+  width: 2px;
+  height: 12px;
+  border-radius: 1px;
+  background: var(--bd-panel-accent);
+  box-shadow: 0 0 5px rgba(var(--bd-panel-rgb), .3);
+}
+.bd-panel__title {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--bedrock-fs-title);
+  font-weight: 600;
+  letter-spacing: .03em;
+  color: var(--bedrock-text-1);
+}
+.bd-panel__meta {
+  margin-left: auto;
+  flex: none;
+  font-family: var(--bedrock-font-num);
+  font-size: var(--bedrock-fs-caption);
+  color: var(--bedrock-text-4);
+  white-space: nowrap;
+}
+.bd-panel__action {
+  flex: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--bedrock-text-3);
+  font-family: var(--bedrock-font-ui);
+  font-size: var(--bedrock-fs-caption);
+  cursor: pointer;
+}
+.bd-panel__action:hover { color: var(--bd-panel-accent); }
+.bd-panel__body {
+  flex: 1;
+  min-height: 0;
+  padding: var(--bd-panel-pad);
+}
+.bd-panel__foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px var(--bd-panel-pad);
+  border-top: 1px solid var(--bedrock-line-1);
+  font-family: var(--bedrock-font-num);
+  font-size: var(--bedrock-fs-caption);
+  color: var(--bedrock-text-4);
+}
+
+.bd-panel--bracket { border-color: transparent; }
+.bd-panel--bracket::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--bedrock-line-3), var(--bedrock-line-3)) left top / 14px 1px no-repeat,
+    linear-gradient(var(--bedrock-line-3), var(--bedrock-line-3)) left top / 1px 14px no-repeat,
+    linear-gradient(var(--bedrock-line-3), var(--bedrock-line-3)) right top / 14px 1px no-repeat,
+    linear-gradient(var(--bedrock-line-3), var(--bedrock-line-3)) right top / 1px 14px no-repeat,
+    linear-gradient(var(--bedrock-line-3), var(--bedrock-line-3)) left bottom / 14px 1px no-repeat,
+    linear-gradient(var(--bedrock-line-3), var(--bedrock-line-3)) left bottom / 1px 14px no-repeat,
+    linear-gradient(var(--bedrock-line-3), var(--bedrock-line-3)) right bottom / 14px 1px no-repeat,
+    linear-gradient(var(--bedrock-line-3), var(--bedrock-line-3)) right bottom / 1px 14px no-repeat;
+}
+.bd-panel--cut {
+  border-radius: 0;
+  clip-path: polygon(
+    var(--bd-panel-cut) 0,
+    100% 0,
+    100% calc(100% - var(--bd-panel-cut)),
+    calc(100% - var(--bd-panel-cut)) 100%,
+    0 100%,
+    0 var(--bd-panel-cut)
+  );
+}
+
+.bd-panel--compact { --bd-panel-pad: 10px; --bd-panel-head: 34px; }
+.bd-panel--compact .bd-panel__title { font-size: var(--bedrock-fs-caption); }
+.bd-panel--comfortable { --bd-panel-pad: 22px; --bd-panel-head: 50px; }
+.bd-panel--comfortable .bd-panel__title { font-size: var(--bedrock-fs-body); }
+
+.bd-panel--info { --bd-panel-accent: var(--bedrock-info); --bd-panel-rgb: var(--bedrock-info-rgb); }
+.bd-panel--warn { --bd-panel-accent: var(--bedrock-warning); --bd-panel-rgb: var(--bedrock-warning-rgb); }
+.bd-panel--error { --bd-panel-accent: var(--bedrock-danger); --bd-panel-rgb: var(--bedrock-danger-rgb); }

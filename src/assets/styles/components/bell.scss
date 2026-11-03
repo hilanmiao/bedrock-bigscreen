@@ -1,0 +1,22 @@
+/* Bedrock UI · Notification bell (CSS details/summary) */
+.bd-bell { position: relative; display: inline-block; }
+.bd-bell > summary { position: relative; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--bedrock-line-2); border-radius: 3px; background: rgba(125, 199, 255, .03); color: var(--bedrock-text-3); cursor: pointer; list-style: none; }
+.bd-bell > summary::-webkit-details-marker { display: none; }
+.bd-bell > summary:hover { color: var(--bedrock-primary); border-color: var(--bedrock-primary-line); }
+.bd-bell > summary svg { width: 16px; height: 16px; }
+.bd-bell__badge { position: absolute; top: -6px; right: -7px; min-width: 16px; height: 16px; padding: 0 4px; display: grid; place-items: center; border: 2px solid var(--bedrock-bg-0); border-radius: 999px; background: var(--bedrock-danger); box-shadow: 0 0 5px rgba(var(--bedrock-danger-rgb), .3); color: #1a0508; font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); }
+.bd-bell__badge--dot { width: 8px; min-width: 8px; height: 8px; padding: 0; top: -2px; right: -2px; }
+.bd-bell__panel { position: absolute; z-index: 20; top: calc(100% + 8px); right: 0; width: 286px; overflow: hidden; border: 1px solid var(--bedrock-line-2); border-radius: 3px; background: var(--bedrock-bg-2); box-shadow: 0 16px 44px rgba(0, 0, 0, .45); }
+.bd-bell__head { display: flex; justify-content: space-between; padding: 9px 12px; border-bottom: 1px solid var(--bedrock-line-1); font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-1); }
+.bd-bell__head span { font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-bell__item { display: flex; gap: 8px; padding: 8px 12px; border-bottom: 1px solid var(--bedrock-line-1); }
+.bd-bell__mark { width: 6px; height: 6px; margin-top: 5px; flex: none; border-radius: 50%; background: var(--bedrock-primary); box-shadow: 0 0 5px rgba(var(--bedrock-primary-rgb), .4); }
+.bd-bell__item--warn .bd-bell__mark { background: var(--bedrock-warning); box-shadow: 0 0 5px rgba(var(--bedrock-warning-rgb), .4); }
+.bd-bell__item--danger .bd-bell__mark { background: var(--bedrock-danger); box-shadow: 0 0 5px rgba(var(--bedrock-danger-rgb), .4); }
+.bd-bell__text { font-size: var(--bedrock-fs-caption); line-height: 1.45; color: var(--bedrock-text-2); }
+.bd-bell__text small { display: block; margin-top: 2px; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-bell__foot { padding: 8px 12px; text-align: center; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-bell--sm > summary { width: 28px; height: 28px; }
+.bd-bell--lg > summary { width: 42px; height: 42px; }
+.bd-bell--compact .bd-bell__item { padding: 6px 12px; }
+.bd-bell--compact .bd-bell__text { font-size: var(--bedrock-fs-caption); }

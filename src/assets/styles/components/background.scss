@@ -1,0 +1,82 @@
+/* ============================================================
+   Bedrock UI · Background
+   CSS-only default + four local image presets. The docs shell
+   keeps the CSS background; images are opt-in presets.
+   ============================================================ */
+
+.bd-bg {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: var(--bedrock-bg-0);
+  background-position: center;
+  background-size: cover;
+}
+
+.bd-bg--css {
+  background:
+    radial-gradient(ellipse 62% 48% at 68% 0%, rgba(var(--bedrock-primary-rgb), .08), transparent 68%),
+    linear-gradient(rgba(125, 199, 255, .03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(125, 199, 255, .03) 1px, transparent 1px),
+    var(--bedrock-bg-0);
+  background-size: auto, 64px 64px, 64px 64px, auto;
+}
+
+.bd-bg--aurora { background-image: url("@/assets/backgrounds/aurora.svg"); }
+.bd-bg--contour { background-image: url("@/assets/backgrounds/contour.svg"); }
+.bd-bg--mesh { background-image: url("@/assets/backgrounds/mesh.svg"); }
+.bd-bg--silk { background-image: url("@/assets/backgrounds/silk.svg"); }
+
+.bd-bg--veil::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(4, 9, 14, .16), rgba(4, 9, 14, .78));
+}
+
+.bd-bg__content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 18px;
+}
+.bd-bg__eyebrow {
+  font-family: var(--bedrock-font-num);
+  font-size: var(--bedrock-fs-caption);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--bedrock-text-4);
+}
+.bd-bg__title {
+  font-size: var(--bedrock-fs-subhead);
+  font-weight: 600;
+  color: var(--bedrock-text-1);
+}
+.bd-bg__label {
+  position: absolute;
+  z-index: 1;
+  left: 12px;
+  bottom: 10px;
+  padding: 2px 7px;
+  border: 1px solid var(--bedrock-line-2);
+  border-radius: 2px;
+  background: rgba(4, 10, 16, .58);
+  color: var(--bedrock-text-3);
+  font-family: var(--bedrock-font-num);
+  font-size: var(--bedrock-fs-caption);
+  letter-spacing: .08em;
+}
+
+.bd-bg-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.bd-bg-grid__item .bd-bg { height: 190px; border: 1px solid var(--bedrock-line-1); border-radius: 4px; }
+.bd-bg-grid__item .bd-bg__label { left: 14px; bottom: 12px; }

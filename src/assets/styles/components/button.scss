@@ -1,0 +1,298 @@
+/* ============================================================
+   Bedrock UI · Button
+   Element Plus button + Bedrock modifiers.
+   EP props/states use el-button--* / is-*;
+   Bedrock extensions use bd-btn--*.
+   ============================================================ */
+
+.el-button.bd-btn {
+  --bedrock-btn-cut: 7px;
+  --bedrock-btn-fill: linear-gradient(180deg, rgba(20, 46, 64, .94), rgba(7, 18, 27, .96));
+  --bedrock-btn-line: var(--bedrock-line-2);
+  --bedrock-btn-color: var(--bedrock-text-1);
+  --bedrock-btn-base: var(--bedrock-bg-2);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 18px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .07), transparent 38%) padding-box,
+    var(--bedrock-btn-fill) padding-box,
+    linear-gradient(var(--bedrock-btn-base), var(--bedrock-btn-base)) padding-box,
+    var(--bedrock-btn-line) border-box;
+  color: var(--bedrock-btn-color);
+  font-family: var(--bedrock-font-ui);
+  font-size: var(--bedrock-fs-label);
+  font-weight: 500;
+  letter-spacing: .06em;
+  line-height: 1;
+  white-space: nowrap;
+  user-select: none;
+  transition: transform var(--bedrock-dur-fast), filter var(--bedrock-dur-fast), color var(--bedrock-dur-fast);
+}
+.el-button.bd-btn > span { display: inline-flex; align-items: center; gap: inherit; }
+.el-button.bd-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -45%;
+  width: 34%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .2), transparent);
+  transform: skewX(-18deg);
+  opacity: 0;
+  pointer-events: none;
+  transition: left .55s ease, opacity .18s;
+}
+.el-button.bd-btn:hover { transform: translateY(-1px); filter: brightness(1.06); border-color: transparent; }
+.el-button.bd-btn:hover::after { left: 125%; opacity: 1; }
+.el-button.bd-btn:active { transform: translateY(1px); filter: brightness(.92); }
+.el-button.bd-btn:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .88), inset 0 0 0 3px var(--bedrock-primary);
+  filter: drop-shadow(0 0 8px rgba(var(--bedrock-primary-rgb), .45));
+}
+.el-button.bd-btn + .bd-btn { margin-left: 0; }
+.bd-btn .el-icon { width: 15px; height: 15px; font-size: 15px; flex: none; }
+
+.bd-btn__led {
+  width: 6px;
+  height: 6px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--bedrock-btn-color);
+  box-shadow: 0 0 5px currentColor;
+}
+
+.el-button--primary.bd-btn {
+  --bedrock-btn-fill: linear-gradient(135deg, var(--bedrock-primary-light) 0%, var(--bedrock-primary) 42%, var(--bedrock-primary-2) 100%);
+  --bedrock-btn-line: rgba(205, 255, 249, .9);
+  --bedrock-btn-color: var(--bedrock-primary-ink);
+  font-weight: 700;
+  filter: drop-shadow(0 0 9px rgba(var(--bedrock-primary-rgb), .14));
+}
+.el-button--primary.bd-btn:hover { filter: drop-shadow(0 0 14px rgba(var(--bedrock-primary-rgb), .34)); }
+.el-button--danger.bd-btn {
+  --bedrock-btn-fill: linear-gradient(135deg, #ff8fa0 0%, #e84764 46%, #9f1239 100%);
+  --bedrock-btn-line: rgba(255, 201, 210, .9);
+  --bedrock-btn-color: #fff1f3;
+  font-weight: 700;
+  filter: drop-shadow(0 0 9px rgba(251, 113, 133, .18));
+}
+.el-button--danger.bd-btn:hover { filter: drop-shadow(0 0 16px rgba(251, 113, 133, .42)); }
+.el-button--warning.bd-btn {
+  --bedrock-btn-fill: linear-gradient(135deg, #ffd98a, #e9a638);
+  --bedrock-btn-line: rgba(255, 232, 180, .9);
+  --bedrock-btn-color: #241300;
+  font-weight: 700;
+}
+.el-button--warning.bd-btn:hover { filter: drop-shadow(0 0 12px rgba(244, 185, 94, .3)); }
+.el-button--success.bd-btn {
+  --bedrock-btn-fill: linear-gradient(135deg, #8af0ad, #2fb765);
+  --bedrock-btn-line: rgba(205, 255, 220, .9);
+  --bedrock-btn-color: #04180c;
+  font-weight: 700;
+}
+.el-button--success.bd-btn:hover { filter: drop-shadow(0 0 12px rgba(74, 222, 128, .28)); }
+.el-button--info.bd-btn {
+  --bedrock-btn-fill: linear-gradient(135deg, #9bd1ff 0%, var(--bedrock-info) 45%, #2f7bd6 100%);
+  --bedrock-btn-line: rgba(204, 232, 255, .9);
+  --bedrock-btn-color: #041a2e;
+  font-weight: 700;
+}
+.el-button--info.bd-btn:hover { filter: drop-shadow(0 0 12px rgba(90, 168, 255, .32)); }
+
+.bd-btn.bd-btn--ghost {
+  --bedrock-btn-fill: linear-gradient(180deg, rgba(16, 38, 54, .72), rgba(5, 13, 21, .8));
+  --bedrock-btn-line: var(--bedrock-line-2);
+  --bedrock-btn-color: var(--bedrock-text-2);
+}
+.bd-btn.bd-btn--ghost:hover { --bedrock-btn-line: var(--bedrock-line-3); --bedrock-btn-color: var(--bedrock-text-1); }
+.bd-btn.bd-btn--outline {
+  --bedrock-btn-fill: rgba(4, 12, 18, .36);
+  --bedrock-btn-line: var(--bedrock-primary-line);
+  --bedrock-btn-color: var(--bedrock-primary);
+}
+.bd-btn.bd-btn--outline:hover { --bedrock-btn-line: var(--bedrock-primary); filter: drop-shadow(0 0 7px rgba(var(--bedrock-primary-rgb), .22)); }
+
+.el-button.is-plain.bd-btn {
+  --bedrock-btn-fill: linear-gradient(180deg, rgba(125, 199, 255, .12), rgba(125, 199, 255, .04));
+  --bedrock-btn-line: var(--bedrock-line-2);
+  --bedrock-btn-color: var(--bedrock-text-2);
+  font-weight: 500;
+  filter: none;
+  box-shadow: none;
+}
+.el-button.is-plain.bd-btn:hover { --bedrock-btn-line: var(--bedrock-line-3); }
+.el-button--primary.is-plain.bd-btn {
+  --bedrock-btn-fill: linear-gradient(180deg, rgba(var(--bedrock-primary-rgb), .16), rgba(var(--bedrock-primary-rgb), .05));
+  --bedrock-btn-line: var(--bedrock-primary-line);
+  --bedrock-btn-color: var(--bedrock-primary);
+}
+.el-button--primary.is-plain.bd-btn:hover { --bedrock-btn-line: var(--bedrock-primary); }
+.el-button--danger.is-plain.bd-btn {
+  --bedrock-btn-fill: linear-gradient(180deg, rgba(251, 113, 133, .16), rgba(251, 113, 133, .05));
+  --bedrock-btn-line: rgba(251, 113, 133, .36);
+  --bedrock-btn-color: var(--bedrock-danger);
+}
+.el-button--danger.is-plain.bd-btn:hover { --bedrock-btn-line: var(--bedrock-danger); }
+.el-button--warning.is-plain.bd-btn {
+  --bedrock-btn-fill: linear-gradient(180deg, rgba(244, 185, 94, .16), rgba(244, 185, 94, .05));
+  --bedrock-btn-line: var(--bedrock-accent-line);
+  --bedrock-btn-color: var(--bedrock-warning);
+}
+.el-button--warning.is-plain.bd-btn:hover { --bedrock-btn-line: var(--bedrock-warning); }
+.el-button--success.is-plain.bd-btn {
+  --bedrock-btn-fill: linear-gradient(180deg, rgba(74, 222, 128, .14), rgba(74, 222, 128, .05));
+  --bedrock-btn-line: rgba(74, 222, 128, .34);
+  --bedrock-btn-color: var(--bedrock-success);
+}
+.el-button--success.is-plain.bd-btn:hover { --bedrock-btn-line: var(--bedrock-success); }
+.el-button--info.is-plain.bd-btn {
+  --bedrock-btn-fill: linear-gradient(180deg, rgba(90, 168, 255, .14), rgba(90, 168, 255, .05));
+  --bedrock-btn-line: rgba(90, 168, 255, .36);
+  --bedrock-btn-color: var(--bedrock-info);
+}
+.el-button--info.is-plain.bd-btn:hover { --bedrock-btn-line: var(--bedrock-info); }
+
+.el-button.is-text.bd-btn {
+  height: auto;
+  padding: 4px 2px;
+  clip-path: none;
+  background: none;
+  color: var(--bedrock-btn-text-tone, var(--bedrock-text-3));
+  font-weight: 400;
+}
+.el-button.is-text.bd-btn::after { display: none; }
+.el-button.is-text.bd-btn:hover {
+  color: var(--bedrock-btn-text-tone, var(--bedrock-primary));
+  transform: none;
+  background: none;
+  filter: brightness(1.18);
+}
+.el-button--primary.is-text.bd-btn { --bedrock-btn-text-tone: var(--bedrock-primary); }
+.el-button--danger.is-text.bd-btn { --bedrock-btn-text-tone: var(--bedrock-danger); }
+.el-button--warning.is-text.bd-btn { --bedrock-btn-text-tone: var(--bedrock-warning); }
+.el-button--success.is-text.bd-btn { --bedrock-btn-text-tone: var(--bedrock-success); }
+.el-button--info.is-text.bd-btn { --bedrock-btn-text-tone: var(--bedrock-info); }
+.bd-btn.bd-btn--command {
+  height: 54px;
+  justify-content: flex-start;
+  padding: 0 18px;
+  --bedrock-btn-fill: linear-gradient(145deg, rgba(24, 58, 78, .92), rgba(7, 18, 27, .96));
+  --bedrock-btn-line: var(--bedrock-primary-line);
+  --bedrock-btn-color: var(--bedrock-primary);
+  border-radius: 0;
+  clip-path: polygon(var(--bedrock-btn-cut) 0, 100% 0, 100% calc(100% - var(--bedrock-btn-cut)), calc(100% - var(--bedrock-btn-cut)) 100%, 0 100%, 0 var(--bedrock-btn-cut));
+}
+.bd-btn.bd-btn--command > span { width: 100%; justify-content: flex-start; }
+.bd-btn__text { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; }
+.bd-btn__title { font-size: var(--bedrock-fs-label); color: var(--bedrock-text-1); letter-spacing: .06em; }
+.bd-btn__sub { font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); letter-spacing: .04em; }
+
+.el-button--small.bd-btn { --bedrock-btn-cut: 5px; height: 28px; padding: 0 12px; font-size: var(--bedrock-fs-caption); gap: 6px; }
+.el-button--small.bd-btn .el-icon { width: 13px; height: 13px; font-size: 13px; }
+.el-button--large.bd-btn { --bedrock-btn-cut: 9px; height: 44px; padding: 0 26px; font-size: var(--bedrock-fs-body); }
+.el-button--large.bd-btn .el-icon { width: 17px; height: 17px; font-size: 17px; }
+.bd-btn.bd-btn--icon { width: 36px; padding: 0; }
+.el-button--small.bd-btn.bd-btn--icon { width: 28px; }
+.el-button--large.bd-btn.bd-btn--icon { width: 44px; }
+.el-button--small.bd-btn.bd-btn--command { height: 44px; padding: 0 14px; }
+.el-button--large.bd-btn.bd-btn--command { height: 64px; padding: 0 22px; }
+
+.bd-btn.bd-btn--sharp { border-radius: 2px; }
+.bd-btn.bd-btn--rounded { border-radius: 8px; }
+.el-button.is-round.bd-btn { border-radius: 999px; }
+.el-button.is-circle.bd-btn { border-radius: 50%; }
+.bd-btn.bd-btn--cut {
+  border-radius: 0;
+  clip-path: polygon(var(--bedrock-btn-cut) 0, 100% 0, 100% calc(100% - var(--bedrock-btn-cut)), calc(100% - var(--bedrock-btn-cut)) 100%, 0 100%, 0 var(--bedrock-btn-cut));
+}
+.bd-btn.bd-btn--bracket {
+  border-radius: 2px;
+  --bedrock-btn-line: transparent;
+}
+.bd-btn.bd-btn--bracket::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--bedrock-btn-color), var(--bedrock-btn-color)) left top / 11px 1px no-repeat,
+    linear-gradient(var(--bedrock-btn-color), var(--bedrock-btn-color)) left top / 1px 11px no-repeat,
+    linear-gradient(var(--bedrock-btn-color), var(--bedrock-btn-color)) right top / 11px 1px no-repeat,
+    linear-gradient(var(--bedrock-btn-color), var(--bedrock-btn-color)) right top / 1px 11px no-repeat,
+    linear-gradient(var(--bedrock-btn-color), var(--bedrock-btn-color)) left bottom / 11px 1px no-repeat,
+    linear-gradient(var(--bedrock-btn-color), var(--bedrock-btn-color)) left bottom / 1px 11px no-repeat,
+    linear-gradient(var(--bedrock-btn-color), var(--bedrock-btn-color)) right bottom / 11px 1px no-repeat,
+    linear-gradient(var(--bedrock-btn-color), var(--bedrock-btn-color)) right bottom / 1px 11px no-repeat;
+}
+.bd-btn.bd-btn--underline {
+  height: auto;
+  padding: 4px 2px;
+  border: 0;
+  border-bottom: 1px solid var(--bedrock-line-2);
+  border-radius: 0;
+  background: none;
+  color: var(--bedrock-text-3);
+  box-shadow: none;
+  font-weight: 400;
+}
+.bd-btn.bd-btn--underline::before,
+.bd-btn.bd-btn--underline::after { display: none; }
+.bd-btn.bd-btn--underline:hover {
+  color: var(--bedrock-primary);
+  border-bottom-color: var(--bedrock-primary);
+  transform: none;
+  background: none;
+}
+
+.bd-btn.is-disabled,
+.bd-btn.is-disabled:hover {
+  opacity: .42;
+  pointer-events: none;
+  filter: saturate(.25);
+  background:
+    var(--bedrock-btn-fill) padding-box,
+    linear-gradient(var(--bedrock-btn-base), var(--bedrock-btn-base)) padding-box,
+    var(--bedrock-btn-line) border-box;
+  color: var(--bedrock-btn-color);
+}
+.bd-btn.is-loading { pointer-events: none; }
+.bd-btn.is-loading .el-icon { color: currentColor; }
+.bd-btn.bd-btn--selected {
+  --bedrock-btn-line: var(--bedrock-primary);
+  --bedrock-btn-color: var(--bedrock-primary);
+  --bedrock-btn-fill: linear-gradient(180deg, rgba(var(--bedrock-primary-rgb), .22), rgba(var(--bedrock-primary-rgb), .08));
+  box-shadow: inset 0 0 0 1px var(--bedrock-primary-line), inset 0 0 18px rgba(var(--bedrock-primary-rgb), .12);
+}
+
+.el-button-group.bd-btn-group {
+  display: inline-flex;
+  gap: 1px;
+  padding: 2px;
+  border-radius: 4px;
+  background: var(--bedrock-line-2);
+  vertical-align: middle;
+}
+.el-button-group.bd-btn-group .bd-btn {
+  height: 30px;
+  margin-left: 0;
+  padding: 0 14px;
+  border-radius: 0;
+  border: 0;
+  font-size: var(--bedrock-fs-caption);
+  --bedrock-btn-fill: rgba(6, 16, 24, .94);
+  --bedrock-btn-line: transparent;
+  --bedrock-btn-color: var(--bedrock-text-3);
+}
+.el-button-group.bd-btn-group .bd-btn.bd-btn--active {
+  --bedrock-btn-color: var(--bedrock-primary);
+  --bedrock-btn-fill: rgba(var(--bedrock-primary-rgb), .14);
+  --bedrock-btn-line: var(--bedrock-primary-line);
+}

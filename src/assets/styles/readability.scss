@@ -1,0 +1,92 @@
+/* ============================================================
+   Bedrock UI · Readability pass
+   Raises small labels and dim secondary copy for big-screen use.
+   ============================================================ */
+
+.bd-page-head h1 { font-size: var(--bedrock-fs-display); }
+.bd-page-head p { font-size: var(--bedrock-fs-body); color: var(--bedrock-text-2); }
+.bd-crumb { font-size: var(--bedrock-fs-caption); }
+.bd-side__name { font-size: var(--bedrock-fs-title); }
+.bd-side__link { font-size: var(--bedrock-fs-label); }
+.bd-side__group { font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-side__foot { font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-section__head { font-size: var(--bedrock-fs-label); }
+.bd-section__meta { font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-label { font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-note { font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-tag { font-size: var(--bedrock-fs-caption); }
+.bd-code { font-size: var(--bedrock-fs-caption); }
+.bd-map th { font-size: var(--bedrock-fs-caption); }
+.bd-map td { font-size: var(--bedrock-fs-caption); }
+.bd-map code { font-size: var(--bedrock-fs-caption); }
+
+.bd-panel__title { font-size: var(--bedrock-fs-body); }
+.bd-panel__meta,
+.bd-panel__action,
+.bd-panel__foot { font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-panel-demo span { font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-panel-demo strong { font-size: var(--bedrock-fs-heading); }
+
+.bd-metric__label,
+.bd-metric__unit,
+.bd-metric__delta { font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-metric__value { font-size: var(--bedrock-fs-metric-lg); }
+.bd-kpi__label,
+.bd-kpi__unit,
+.bd-kpi__delta { font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-kpi__value { font-size: var(--bedrock-fs-display); }
+.bd-progress__label,
+.bd-progress__value,
+.bd-bullet__label,
+.bd-bullet__value { font-size: var(--bedrock-fs-caption); }
+.bd-ring__label { font-size: var(--bedrock-fs-caption); }
+.bd-flip__suffix { font-size: var(--bedrock-fs-caption); }
+.bd-rank__name,
+.bd-rank__value { font-size: var(--bedrock-fs-caption); }
+.bd-timeline__time { font-size: var(--bedrock-fs-caption); }
+.bd-timeline__title { font-size: var(--bedrock-fs-label); }
+.bd-timeline__desc { font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-matrix__label { font-size: var(--bedrock-fs-caption); }
+.bd-matrix__state { font-size: var(--bedrock-fs-caption); }
+.bd-device__name { font-size: var(--bedrock-fs-label); }
+.bd-device__sub { font-size: var(--bedrock-fs-caption); }
+.bd-device__status { font-size: var(--bedrock-fs-caption); }
+.bd-device__metrics span { font-size: var(--bedrock-fs-caption); }
+.bd-device__metrics b { font-size: var(--bedrock-fs-title); }
+.bd-alert__text { font-size: var(--bedrock-fs-caption); }
+.bd-alert__time,
+.bd-alert__tag,
+.bd-alert__meta { font-size: var(--bedrock-fs-caption); }
+.bd-alert__card b { font-size: var(--bedrock-fs-caption); }
+.bd-alert__card span { font-size: var(--bedrock-fs-caption); }
+.bd-marquee__item { font-size: var(--bedrock-fs-caption); }
+.bd-event__title { font-size: var(--bedrock-fs-label); }
+.bd-event__desc { font-size: var(--bedrock-fs-caption); }
+.bd-event__tag { font-size: var(--bedrock-fs-caption); }
+.bd-event__foot { font-size: var(--bedrock-fs-caption); }
+.bd-banner__title { font-size: var(--bedrock-fs-label); }
+.bd-banner__desc { font-size: var(--bedrock-fs-caption); }
+.bd-banner__status,
+.bd-banner__action { font-size: var(--bedrock-fs-caption); }
+.bd-bell__head { font-size: var(--bedrock-fs-caption); }
+.bd-bell__text { font-size: var(--bedrock-fs-caption); }
+.bd-state__title { font-size: var(--bedrock-fs-label); }
+.bd-state__desc { font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-video__top { font-size: var(--bedrock-fs-caption); }
+.bd-video__foot { font-size: var(--bedrock-fs-caption); }
+
+.bd-switch-row__label { font-size: var(--bedrock-fs-label); }
+.bd-switch-row__desc { font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-select .el-select__placeholder { font-size: var(--bedrock-fs-caption); }
+.bd-tabs .el-tabs__item { font-size: var(--bedrock-fs-caption); }
+.bd-tabs .el-tabs__content { font-size: var(--bedrock-fs-caption); }
+.bd-slider-block__head { font-size: var(--bedrock-fs-caption); }
+.bd-segmented .el-radio-button__inner { font-size: var(--bedrock-fs-caption); }
+.bd-dialog .el-dialog__body,
+.bd-drawer .el-drawer__body { font-size: var(--bedrock-fs-label); color: var(--bedrock-text-2); }
+.bd-dialog .el-dialog__title,
+.bd-drawer .el-drawer__title { font-size: var(--bedrock-fs-title); }
+.bd-tooltip__desc { font-size: var(--bedrock-fs-caption); }
+.bd-table .el-table__header th { font-size: var(--bedrock-fs-caption); }
+.bd-table .el-table__body td { font-size: var(--bedrock-fs-caption); }
+.bd-table__status { font-size: var(--bedrock-fs-caption); }

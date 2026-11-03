@@ -1,0 +1,55 @@
+/* Bedrock UI · Spectrum bars */
+.bd-spectrum {
+  --bd-spectrum-accent: var(--bedrock-primary);
+  --bd-spectrum-rgb: var(--bedrock-primary-rgb);
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 120px;
+  padding: 0 2px 1px;
+  border-bottom: 1px solid var(--bedrock-line-2);
+}
+.bd-spectrum__bar {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 2px;
+  height: var(--h, 50%);
+  border-radius: 1px 1px 0 0;
+  background: linear-gradient(180deg, var(--bd-spectrum-accent), rgba(var(--bd-spectrum-rgb), .12));
+  box-shadow: 0 0 4px rgba(var(--bd-spectrum-rgb), .4), 0 0 12px rgba(var(--bd-spectrum-rgb), .18);
+  transform-origin: center bottom;
+  animation: bd-spectrum-beat 1.8s ease-in-out infinite alternate;
+  animation-delay: var(--d, 0s);
+  opacity: .9;
+}
+.bd-spectrum__bar::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  border-radius: inherit;
+  background: var(--bd-spectrum-accent);
+  box-shadow: 0 0 6px rgba(var(--bd-spectrum-rgb), .7);
+}
+.bd-spectrum--dotted .bd-spectrum__bar {
+  background: repeating-linear-gradient(0deg, var(--bd-spectrum-accent) 0 3px, transparent 3px 8px);
+  box-shadow: none;
+}
+.bd-spectrum--dotted .bd-spectrum__bar::before { display: none; }
+.bd-spectrum--sm { height: 76px; gap: 3px; }
+.bd-spectrum--lg { height: 160px; gap: 5px; }
+.bd-spectrum--warn { --bd-spectrum-accent: var(--bedrock-warning); --bd-spectrum-rgb: var(--bedrock-warning-rgb); }
+.bd-spectrum--error { --bd-spectrum-accent: var(--bedrock-danger); --bd-spectrum-rgb: var(--bedrock-danger-rgb); }
+.bd-spectrum--paused .bd-spectrum__bar { animation-play-state: paused; }
+
+@keyframes bd-spectrum-beat {
+  from { transform: scaleY(.55); opacity: .6; }
+  to { transform: scaleY(1); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bd-spectrum__bar { animation: none; }
+}

@@ -1,0 +1,67 @@
+/* ============================================================
+   Bedrock UI · KPI card
+   CSS only. basic / icon / ring layouts, three sizes, states.
+   ============================================================ */
+
+.bd-kpi {
+  --bd-kpi-accent: var(--bedrock-primary);
+  --bd-kpi-rgb: var(--bedrock-primary-rgb);
+  position: relative;
+  min-width: 0;
+  padding: 11px 12px 10px;
+  overflow: hidden;
+  border: 1px solid var(--bedrock-line-1);
+  border-radius: 3px;
+  background: linear-gradient(145deg, rgba(20, 48, 68, .5), rgba(7, 18, 26, .62));
+}
+.bd-kpi::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  border-radius: 0 2px 2px 0;
+  background: var(--bd-kpi-accent);
+  box-shadow: 0 0 6px rgba(var(--bd-kpi-rgb), .35);
+}
+.bd-kpi__label { font-size: var(--bedrock-fs-caption); letter-spacing: .04em; color: var(--bedrock-text-4); }
+.bd-kpi__value { margin-top: 7px; font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-metric-lg); line-height: 1; color: var(--bedrock-text-1); }
+.bd-kpi__unit { margin-left: 4px; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-kpi__delta { margin-top: 6px; font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-kpi__delta[data-tone="good"] { color: var(--bedrock-success); }
+.bd-kpi__delta[data-tone="bad"] { color: var(--bedrock-danger); }
+.bd-kpi__icon {
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--bedrock-line-2);
+  border-radius: 50%;
+  color: var(--bd-kpi-accent);
+}
+.bd-kpi__icon svg { width: 15px; height: 15px; }
+.bd-kpi--icon { padding-left: 50px; }
+.bd-kpi--icon .bd-kpi__label { padding-top: 2px; }
+.bd-kpi--ring { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 8px; }
+.bd-kpi__ring {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: conic-gradient(var(--bd-kpi-accent) calc(var(--p, 72) * 1%), var(--bedrock-line-1) 0);
+}
+.bd-kpi__ring::after { content: ""; position: absolute; inset: 5px; border-radius: 50%; background: var(--bedrock-bg-1); }
+.bd-kpi__ring b { position: absolute; z-index: 1; inset: 0; display: grid; place-items: center; font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); font-weight: 500; color: var(--bd-kpi-accent); }
+.bd-kpi--sm { padding: 8px 10px; }
+.bd-kpi--sm .bd-kpi__value { font-size: var(--bedrock-fs-metric); }
+.bd-kpi--sm.bd-kpi--icon { padding-left: 42px; }
+.bd-kpi--lg { padding: 14px 15px; }
+.bd-kpi--lg .bd-kpi__value { font-size: var(--bedrock-fs-display); }
+.bd-kpi--warn { --bd-kpi-accent: var(--bedrock-warning); --bd-kpi-rgb: var(--bedrock-warning-rgb); }
+.bd-kpi--error { --bd-kpi-accent: var(--bedrock-danger); --bd-kpi-rgb: var(--bedrock-danger-rgb); }
+.bd-kpi--muted { opacity: .55; }

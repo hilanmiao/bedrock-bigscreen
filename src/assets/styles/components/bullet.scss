@@ -1,0 +1,14 @@
+/* Bedrock UI · Bullet chart */
+.bd-bullet { --bd-bullet-rgb: var(--bedrock-primary-rgb); display: flex; flex-direction: column; gap: 11px; }
+.bd-bullet__row { display: grid; grid-template-columns: 116px minmax(0, 1fr) 56px; align-items: center; gap: 10px; }
+.bd-bullet__label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-bullet__track { position: relative; height: 9px; border-radius: 2px; background: var(--bedrock-line-1); }
+.bd-bullet__fill { position: absolute; inset: 0 auto 0 0; width: var(--v); border-radius: inherit; background: var(--bd-bullet-accent, var(--bedrock-primary)); box-shadow: 0 0 6px rgba(var(--bd-bullet-rgb), .55), 0 0 18px rgba(var(--bd-bullet-rgb), .3); opacity: .75; }
+.bd-bullet__target { position: absolute; top: -2px; bottom: -2px; left: var(--t); width: 2px; background: var(--bedrock-text-1); box-shadow: 0 0 5px rgba(255, 255, 255, .3); }
+.bd-bullet__value { text-align: right; font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-2); }
+.bd-bullet--segmented .bd-bullet__fill { background: repeating-linear-gradient(90deg, var(--bd-bullet-accent, var(--bedrock-primary)) 0 10px, transparent 10px 14px); opacity: 1; }
+.bd-bullet--thin .bd-bullet__track { height: 4px; }
+.bd-bullet--compact { gap: 8px; }
+.bd-bullet--compact .bd-bullet__row { grid-template-columns: 96px minmax(0, 1fr) 48px; gap: 8px; }
+.bd-bullet__row--warn { --bd-bullet-accent: var(--bedrock-warning); --bd-bullet-rgb: var(--bedrock-warning-rgb); }
+.bd-bullet__row--error { --bd-bullet-accent: var(--bedrock-danger); --bd-bullet-rgb: var(--bedrock-danger-rgb); }

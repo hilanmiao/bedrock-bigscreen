@@ -1,0 +1,17 @@
+/* Bedrock UI · Marquee */
+.bd-marquee { position: relative; height: 38px; overflow: hidden; }
+.bd-marquee__viewport { position: absolute; inset: 0; display: flex; align-items: center; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 20px, #000 calc(100% - 26px), transparent); mask-image: linear-gradient(90deg, transparent, #000 20px, #000 calc(100% - 26px), transparent); }
+.bd-marquee__track { display: inline-flex; align-items: center; white-space: nowrap; animation: bd-marquee-scroll var(--speed, 26s) linear infinite; }
+.bd-marquee:hover .bd-marquee__track { animation-play-state: paused; }
+.bd-marquee__item { display: inline-flex; align-items: center; gap: 7px; margin-right: 30px; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-2); }
+.bd-marquee__dot { width: 5px; height: 5px; flex: none; border-radius: 50%; background: var(--bedrock-primary); box-shadow: 0 0 5px rgba(var(--bedrock-primary-rgb), .35); }
+.bd-marquee__tag { flex: none; padding: 1px 6px; border: 1px solid var(--bedrock-accent-line); border-radius: 2px; color: var(--bedrock-warning); font-size: var(--bedrock-fs-caption); }
+.bd-marquee__tag--danger { border-color: rgba(251, 113, 133, .36); color: var(--bedrock-danger); }
+.bd-marquee--board { border: 1px solid var(--bedrock-line-1); border-radius: 3px; background: linear-gradient(90deg, rgba(var(--bedrock-primary-rgb), .07), transparent 45%), rgba(6, 16, 24, .5); }
+.bd-marquee__lead { position: absolute; z-index: 1; left: 0; top: 0; bottom: 0; width: 106px; display: flex; align-items: center; justify-content: center; border-right: 1px solid var(--bedrock-line-1); color: var(--bedrock-primary); font-size: var(--bedrock-fs-caption); letter-spacing: .08em; background: rgba(var(--bedrock-primary-rgb), .06); }
+.bd-marquee--board .bd-marquee__viewport { left: 106px; }
+.bd-marquee--sm { height: 30px; }
+.bd-marquee--sm .bd-marquee__item { font-size: var(--bedrock-fs-caption); margin-right: 24px; }
+.bd-marquee--lg { height: 46px; }
+.bd-marquee--lg .bd-marquee__item { font-size: var(--bedrock-fs-caption); margin-right: 36px; }
+@keyframes bd-marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }

@@ -1,0 +1,14 @@
+/* Bedrock UI · Dialog (Element Plus restyle) */
+.bd-dialog { --el-dialog-bg-color: var(--bedrock-bg-2); border: 1px solid var(--bedrock-line-2); border-radius: 4px; box-shadow: 0 24px 70px rgba(0, 0, 0, .55); }
+.bd-dialog .el-dialog__header { margin: 0; padding: 14px 18px; border-bottom: 1px solid var(--bedrock-line-1); }
+.bd-dialog .el-dialog__title { font-size: var(--bedrock-fs-body); color: var(--bedrock-text-1); }
+.bd-dialog .el-dialog__body { padding: 18px; font-size: var(--bedrock-fs-caption); line-height: 1.7; color: var(--bedrock-text-3); }
+.bd-dialog .el-dialog__footer { padding: 12px 18px; border-top: 1px solid var(--bedrock-line-1); }
+.bd-dialog .el-dialog__headerbtn .el-dialog__close { color: var(--bedrock-text-4); }
+.bd-dialog--wide { width: 680px !important; }
+.bd-dialog__eyebrow { margin-bottom: 6px; font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); letter-spacing: .16em; color: var(--bedrock-primary); }
+.bd-dialog__actions { display: flex; justify-content: flex-end; gap: 8px; }
+.bd-dialog__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.bd-dialog__field { padding: 10px; border: 1px solid var(--bedrock-line-1); border-radius: 3px; background: rgba(6, 16, 24, .35); }
+.bd-dialog__field span { display: block; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-dialog__field b { display: block; margin-top: 4px; font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-subhead); font-weight: 500; color: var(--bedrock-text-1); }

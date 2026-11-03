@@ -1,0 +1,34 @@
+/* ============================================================
+   Bedrock UI · Metric strip
+   CSS only. inline / stack / spark × sm / md / lg × states.
+   ============================================================ */
+
+.bd-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--bedrock-line-1);
+  border-radius: 3px;
+  background: rgba(6, 16, 24, .42);
+}
+.bd-metric__label { font-size: var(--bedrock-fs-caption); letter-spacing: .04em; color: var(--bedrock-text-4); }
+.bd-metric__row { display: flex; align-items: baseline; gap: 6px; min-width: 0; }
+.bd-metric__value { font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-metric); line-height: 1; color: var(--bedrock-text-1); }
+.bd-metric__unit { font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-metric__delta { margin-left: auto; font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-metric--inline { flex-direction: row; align-items: center; justify-content: space-between; gap: 12px; }
+.bd-metric--inline .bd-metric__row { gap: 4px; }
+.bd-metric--inline .bd-metric__value { font-size: var(--bedrock-fs-subhead); }
+.bd-metric--spark { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 10px; }
+.bd-metric--spark .bd-metric__label { grid-column: 1; }
+.bd-metric--spark .bd-metric__row { grid-column: 1; }
+.bd-metric__spark { grid-column: 2; grid-row: 1 / 3; width: 92px; height: 30px; color: var(--bedrock-primary); filter: drop-shadow(0 0 3px rgba(var(--bedrock-primary-rgb), .45)); }
+.bd-metric--sm { padding: 8px 9px; }
+.bd-metric--sm .bd-metric__value { font-size: var(--bedrock-fs-subhead); }
+.bd-metric--lg { padding: 13px 15px; }
+.bd-metric--lg .bd-metric__value { font-size: var(--bedrock-fs-display); }
+.bd-metric--warn .bd-metric__value { color: var(--bedrock-warning); }
+.bd-metric--error .bd-metric__value { color: var(--bedrock-danger); }
+.bd-metric--muted { opacity: .55; }

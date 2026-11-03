@@ -1,0 +1,20 @@
+/* Bedrock UI · Alert feed */
+.bd-alert { --bd-alert-rgb: var(--bedrock-warning-rgb); display: flex; flex-direction: column; }
+.bd-alert__row { display: grid; grid-template-columns: 42px 56px minmax(0, 1fr) auto; gap: 8px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--bedrock-line-1); }
+.bd-alert__row:last-child { border-bottom: 0; }
+.bd-alert__time { font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-alert__tag { justify-self: start; padding: 1px 5px; border: 1px solid var(--bedrock-accent-line); border-radius: 2px; box-shadow: 0 0 6px rgba(var(--bd-alert-rgb), .2); color: var(--bedrock-warning); font-size: var(--bedrock-fs-caption); }
+.bd-alert__row--error { --bd-alert-rgb: var(--bedrock-danger-rgb); }
+.bd-alert__row--success { --bd-alert-rgb: var(--bedrock-success-rgb); }
+.bd-alert__row--error .bd-alert__tag { border-color: rgba(251, 113, 133, .36); color: var(--bedrock-danger); }
+.bd-alert__row--success .bd-alert__tag { border-color: rgba(74, 222, 128, .34); color: var(--bedrock-success); }
+.bd-alert__text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-2); }
+.bd-alert__meta { font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-alert--compact .bd-alert__row { grid-template-columns: 40px 48px minmax(0, 1fr); padding: 6px 0; }
+.bd-alert--compact .bd-alert__meta { display: none; }
+.bd-alert--card { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.bd-alert__card { padding: 9px 10px; border: 1px solid var(--bedrock-line-1); border-left: 2px solid var(--bedrock-accent); border-radius: 2px; background: rgba(6, 16, 24, .4); box-shadow: inset 2px 0 8px -3px rgba(var(--bd-alert-rgb), .55); }
+.bd-alert__card--error { --bd-alert-rgb: var(--bedrock-danger-rgb); border-left-color: var(--bedrock-danger); }
+.bd-alert__card--success { --bd-alert-rgb: var(--bedrock-success-rgb); border-left-color: var(--bedrock-success); }
+.bd-alert__card b { display: block; font-size: var(--bedrock-fs-caption); font-weight: 500; color: var(--bedrock-text-2); }
+.bd-alert__card span { display: block; margin-top: 4px; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }

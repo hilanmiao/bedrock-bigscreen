@@ -1,0 +1,11 @@
+/* Bedrock UI · Select (Element Plus restyle) */
+.bd-select { width: 280px; }
+.bd-select .el-select__wrapper { min-height: 36px; border: 1px solid var(--bedrock-line-2); border-radius: 3px; background: rgba(6, 16, 24, .62); box-shadow: none; }
+.bd-select .el-select__wrapper.is-focused { border-color: var(--bedrock-primary-line); box-shadow: 0 0 0 1px var(--bedrock-primary-line); }
+.bd-select .el-select__placeholder { font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-2); }
+.bd-select .el-select__caret { color: var(--bedrock-text-4); }
+.bd-select-popper.el-popper { border-color: var(--bedrock-line-2); background: var(--bedrock-bg-2); }
+.bd-select-popper .el-select-dropdown__item { display: flex; flex-direction: column; gap: 2px; height: auto; padding: 7px 12px; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-2); }
+.bd-select-popper .el-select-dropdown__item.is-selected { color: var(--bedrock-primary); }
+.bd-select-popper .el-select-dropdown__item small { font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-select-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }

@@ -1,0 +1,67 @@
+/* Bedrock UI · Pulse wave */
+.bd-pulse {
+  --bd-pulse-accent: var(--bedrock-primary);
+  --bd-pulse-rgb: var(--bedrock-primary-rgb);
+  position: relative;
+  height: 96px;
+  overflow: hidden;
+}
+.bd-pulse::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 23px, var(--bedrock-line-1) 23px 24px),
+    repeating-linear-gradient(90deg, transparent 0 39px, var(--bedrock-line-1) 39px 40px);
+  opacity: .55;
+}
+.bd-pulse__chart {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.bd-pulse__track {
+  fill: none;
+  stroke: var(--bedrock-line-3);
+  stroke-width: 1.2;
+  vector-effect: non-scaling-stroke;
+}
+.bd-pulse__beam {
+  fill: none;
+  stroke: var(--bd-pulse-accent);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-dasharray: 16 84;
+  filter: drop-shadow(0 0 4px rgba(var(--bd-pulse-rgb), .8));
+  vector-effect: non-scaling-stroke;
+  animation: bd-pulse-run 2.8s linear infinite;
+}
+.bd-pulse__meta {
+  position: absolute;
+  z-index: 2;
+  right: 8px;
+  top: 6px;
+  font-family: var(--bedrock-font-num);
+  font-size: var(--bedrock-fs-caption);
+  color: var(--bedrock-text-4);
+}
+.bd-pulse__meta b { font-weight: 500; color: var(--bd-pulse-accent); }
+.bd-pulse--plain::before { display: none; }
+.bd-pulse--sm { height: 64px; }
+.bd-pulse--lg { height: 140px; }
+.bd-pulse--warn { --bd-pulse-accent: var(--bedrock-warning); --bd-pulse-rgb: var(--bedrock-warning-rgb); }
+.bd-pulse--error { --bd-pulse-accent: var(--bedrock-danger); --bd-pulse-rgb: var(--bedrock-danger-rgb); }
+.bd-pulse--paused .bd-pulse__beam { animation-play-state: paused; }
+
+@keyframes bd-pulse-run {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bd-pulse__beam { animation: none; }
+}

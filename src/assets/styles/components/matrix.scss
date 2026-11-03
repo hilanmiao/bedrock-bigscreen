@@ -1,0 +1,13 @@
+/* Bedrock UI · Matrix */
+.bd-matrix { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; }
+.bd-matrix__cell { display: flex; flex-direction: column; gap: 4px; min-width: 0; padding: 7px 8px; border: 1px solid var(--bedrock-line-1); border-radius: 2px; background: rgba(6, 16, 24, .4); }
+.bd-matrix__label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-matrix__state { display: inline-flex; align-items: center; gap: 5px; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-2); }
+.bd-matrix__state::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--bedrock-success); box-shadow: 0 0 5px rgba(var(--bedrock-success-rgb), .4); }
+.bd-matrix__cell--warn .bd-matrix__state::before { background: var(--bedrock-warning); box-shadow: 0 0 5px rgba(var(--bedrock-warning-rgb), .4); }
+.bd-matrix__cell--error .bd-matrix__state::before { background: var(--bedrock-danger); box-shadow: 0 0 5px rgba(var(--bedrock-danger-rgb), .4); }
+.bd-matrix--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.bd-matrix--compact { gap: 3px; }
+.bd-matrix--compact .bd-matrix__cell { padding: 5px 6px; }
+.bd-matrix--list { grid-template-columns: 1fr; }
+.bd-matrix--list .bd-matrix__cell { flex-direction: row; align-items: center; justify-content: space-between; padding: 7px 10px; }

@@ -1,0 +1,17 @@
+/* ============================================================
+   Bedrock UI · Blue theme (experimental)
+   Activate with <html class="dark" data-bedrock-theme="blue">.
+   Only primary-family tokens change; semantic colors stay.
+   ============================================================ */
+
+html.dark[data-bedrock-theme="blue"] {
+  --bedrock-primary: #2563eb;
+  --bedrock-primary-2: #1e40af;
+  --bedrock-primary-soft: rgba(37, 99, 235, .14);
+  --bedrock-primary-line: rgba(37, 99, 235, .42);
+  --bedrock-primary-rgb: 37, 99, 235;
+  --bedrock-primary-light: #3b82f6;
+  --bedrock-primary-ink: #f5f9ff;
+
+  --el-color-primary: var(--bedrock-primary);
+}

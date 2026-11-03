@@ -1,0 +1,22 @@
+/* Bedrock UI · Ranking */
+.bd-rank { display: flex; flex-direction: column; gap: 2px; }
+.bd-rank__item { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; gap: 8px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--bedrock-line-1); }
+.bd-rank__item:last-child { border-bottom: 0; }
+.bd-rank__no { font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); text-align: center; color: var(--bedrock-text-4); }
+.bd-rank__item:nth-child(1) .bd-rank__no { color: var(--bedrock-accent); }
+.bd-rank__item:nth-child(2) .bd-rank__no { color: var(--bedrock-text-2); }
+.bd-rank__item:nth-child(3) .bd-rank__no { color: var(--bedrock-primary); }
+.bd-rank__name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-2); }
+.bd-rank__bar { grid-column: 2; height: 2px; margin-top: -4px; background: var(--bedrock-line-1); }
+.bd-rank__bar i { display: block; width: var(--p); height: 100%; border-radius: 1px; background: var(--bedrock-primary); box-shadow: 0 0 5px rgba(var(--bedrock-primary-rgb), .6), 0 0 14px rgba(var(--bedrock-primary-rgb), .35); opacity: .7; }
+.bd-rank__value { grid-column: 3; grid-row: 1; font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); white-space: nowrap; }
+.bd-rank--compact { gap: 0; }
+.bd-rank--compact .bd-rank__item { padding: 4px 0; }
+.bd-rank--compact .bd-rank__bar { display: none; }
+.bd-rank--podium { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: end; gap: 8px; height: 168px; }
+.bd-rank__podium { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 4px; height: var(--h); padding: 10px 6px; border: 1px solid var(--bedrock-line-1); background: linear-gradient(180deg, rgba(63, 224, 207, .06), rgba(5, 13, 21, .5)); }
+.bd-rank__podium:nth-child(1) { --h: 100%; order: 2; }
+.bd-rank__podium:nth-child(2) { --h: 82%; order: 1; }
+.bd-rank__podium:nth-child(3) { --h: 70%; order: 3; }
+.bd-rank__podium b { font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-metric); color: var(--bedrock-accent); }
+.bd-rank__podium span { font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }

@@ -1,0 +1,18 @@
+/* Bedrock UI · Event card */
+.bd-event { --bd-event-rgb: var(--bedrock-primary-rgb); position: relative; padding: 11px 12px 11px 15px; overflow: hidden; border: 1px solid var(--bedrock-line-1); border-radius: 3px; background: linear-gradient(145deg, rgba(20, 48, 68, .46), rgba(6, 16, 24, .6)); }
+.bd-event::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--bd-event-accent, var(--bedrock-primary)); box-shadow: 0 0 7px rgba(var(--bd-event-rgb), .38); }
+.bd-event--warn { --bd-event-accent: var(--bedrock-warning); --bd-event-rgb: var(--bedrock-warning-rgb); }
+.bd-event--error { --bd-event-accent: var(--bedrock-danger); --bd-event-rgb: var(--bedrock-danger-rgb); }
+.bd-event--success { --bd-event-accent: var(--bedrock-success); --bd-event-rgb: var(--bedrock-success-rgb); }
+.bd-event__top { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+.bd-event__tag { padding: 1px 5px; border: 1px solid var(--bedrock-accent-line); border-radius: 2px; color: var(--bedrock-warning); font-size: var(--bedrock-fs-caption); }
+.bd-event--error .bd-event__tag { border-color: rgba(251, 113, 133, .36); color: var(--bedrock-danger); }
+.bd-event--success .bd-event__tag { border-color: rgba(74, 222, 128, .34); color: var(--bedrock-success); }
+.bd-event__time { margin-left: auto; font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-event__title { font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-1); }
+.bd-event__desc { margin-top: 4px; font-size: var(--bedrock-fs-caption); line-height: 1.6; color: var(--bedrock-text-3); }
+.bd-event__foot { display: flex; justify-content: space-between; gap: 10px; margin-top: 8px; padding-top: 7px; border-top: 1px solid var(--bedrock-line-1); font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-event--compact { display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 10px 0 13px; }
+.bd-event--compact .bd-event__title { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bd-event--handled { opacity: .55; }
+.bd-event--handled::before { background: var(--bedrock-success); box-shadow: 0 0 7px rgba(var(--bedrock-success-rgb), .3); }

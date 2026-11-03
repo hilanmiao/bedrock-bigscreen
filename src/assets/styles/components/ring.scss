@@ -1,0 +1,14 @@
+/* Bedrock UI · Ring */
+.bd-ring { --p: 72; --bd-ring-accent: var(--bedrock-primary); --bd-ring-rgb: var(--bedrock-primary-rgb); position: relative; width: 104px; height: 104px; border-radius: 50%; background: conic-gradient(var(--bd-ring-accent) calc(var(--p) * 1%), var(--bedrock-line-1) 0); display: grid; place-items: center; box-shadow: 0 0 7px rgba(var(--bd-ring-rgb), .2); }
+.bd-ring::before { content: ""; position: absolute; inset: 8px; border-radius: 50%; background: var(--bedrock-bg-1); }
+.bd-ring__content { position: relative; z-index: 1; text-align: center; }
+.bd-ring__value { font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-metric); line-height: 1; color: var(--bedrock-text-1); }
+.bd-ring__label { margin-top: 4px; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-ring--thin::before { inset: 5px; }
+.bd-ring--sm { width: 76px; height: 76px; }
+.bd-ring--sm .bd-ring__value { font-size: var(--bedrock-fs-subhead); }
+.bd-ring--lg { width: 136px; height: 136px; }
+.bd-ring--lg .bd-ring__value { font-size: var(--bedrock-fs-display); }
+.bd-ring--warn { --bd-ring-accent: var(--bedrock-warning); --bd-ring-rgb: var(--bedrock-warning-rgb); }
+.bd-ring--error { --bd-ring-accent: var(--bedrock-danger); --bd-ring-rgb: var(--bedrock-danger-rgb); }
+.bd-ring-row { display: flex; flex-wrap: wrap; align-items: center; gap: 34px; }

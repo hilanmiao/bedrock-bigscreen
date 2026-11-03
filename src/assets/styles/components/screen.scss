@@ -1,0 +1,59 @@
+/* ============================================================
+   Bedrock UI · Canvas skeleton
+   CSS aspect-ratio frame for big screens. No ScreenAdapter.
+   ============================================================ */
+
+.bd-canvas {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid var(--bedrock-line-2);
+  border-radius: 4px;
+  background:
+    radial-gradient(ellipse 55% 45% at 68% 0%, rgba(var(--bedrock-primary-rgb), .06), transparent 68%),
+    var(--bedrock-bg-0);
+}
+.bd-canvas--wide { aspect-ratio: 21 / 9; }
+.bd-canvas__safe {
+  position: absolute;
+  inset: 14px;
+  z-index: 1;
+  border: 1px dashed var(--bedrock-line-2);
+  border-radius: 3px;
+  pointer-events: none;
+}
+.bd-canvas__safe-label {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  z-index: 1;
+  font-family: var(--bedrock-font-num);
+  font-size: var(--bedrock-fs-caption);
+  letter-spacing: .1em;
+  color: var(--bedrock-text-4);
+}
+.bd-canvas__layout {
+  position: absolute;
+  inset: 22px;
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  grid-template-rows: 46px 1fr;
+  gap: 10px;
+}
+.bd-canvas__slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--bedrock-line-1);
+  border-radius: 3px;
+  background: rgba(7, 18, 27, .5);
+  color: var(--bedrock-text-4);
+  font-family: var(--bedrock-font-num);
+  font-size: var(--bedrock-fs-caption);
+  letter-spacing: .08em;
+}
+.bd-canvas__slot--head { grid-column: 1 / 3; }
+.bd-canvas__slot--side { grid-row: 2; }
+.bd-canvas__slot--main { grid-row: 2; }
+.bd-canvas__layout--wide { grid-template-columns: 140px 1fr; grid-template-rows: 40px 1fr; }

@@ -1,0 +1,76 @@
+/* ============================================================
+   Bedrock UI · documentation home
+   Color / type / spacing specimens. Home only.
+   ============================================================ */
+
+.bd-eyebrow {
+  font-family: var(--bedrock-font-num);
+  font-size: var(--bedrock-fs-caption);
+  letter-spacing: .2em;
+  color: var(--bedrock-primary);
+}
+.bd-doc-head { padding: 10px 0 24px; }
+.bd-doc-head h1 { margin: 8px 0 0; }
+.bd-doc-head p { max-width: 780px; }
+
+.bd-principles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.bd-principle {
+  padding: 18px;
+  border: 1px solid var(--bedrock-line-1);
+  border-radius: 4px;
+  background: rgba(4, 11, 17, .28);
+}
+.bd-principle__no {
+  font-family: var(--bedrock-font-num);
+  font-size: var(--bedrock-fs-caption);
+  letter-spacing: .12em;
+  color: var(--bedrock-primary);
+}
+.bd-principle h3 { margin: 10px 0 6px; font-size: var(--bedrock-fs-body); font-weight: 600; color: var(--bedrock-text-1); }
+.bd-principle p { margin: 0; font-size: var(--bedrock-fs-caption); line-height: 1.7; color: var(--bedrock-text-3); }
+
+.bd-color-group + .bd-color-group { margin-top: 20px; }
+.bd-color-group__title { margin-bottom: 8px; font-size: var(--bedrock-fs-caption); letter-spacing: .1em; color: var(--bedrock-text-4); }
+.bd-swatches { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+.bd-swatch { overflow: hidden; border: 1px solid var(--bedrock-line-1); border-radius: 3px; background: rgba(4, 11, 17, .35); }
+.bd-swatch__chip { height: 54px; background: var(--sw); border-bottom: 1px solid var(--bedrock-line-1); }
+.bd-swatch__meta { display: flex; justify-content: space-between; gap: 6px; padding: 7px 9px; font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-swatch__meta em { font-style: normal; color: var(--bedrock-text-4); }
+
+.bd-type-row { display: flex; align-items: baseline; gap: 18px; padding: 10px 0; border-bottom: 1px solid var(--bedrock-line-1); }
+.bd-type-row:last-child { border-bottom: 0; }
+.bd-type-meta { width: 92px; flex: none; font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-type-sample { color: var(--bedrock-text-1); }
+
+.bd-scale-row { display: flex; align-items: center; gap: 14px; padding: 7px 0; }
+.bd-scale-key { width: 46px; flex: none; font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-scale-bar { height: 8px; border-radius: 1px; background: var(--bedrock-primary-soft); border: 1px solid var(--bedrock-primary-line); }
+.bd-scale-value { font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+
+.bd-radius-row { display: flex; flex-wrap: wrap; gap: 14px; }
+.bd-radius-item { display: flex; flex-direction: column; align-items: center; gap: 7px; }
+.bd-radius-box { width: 64px; height: 34px; border: 1px solid var(--bedrock-primary-line); background: var(--bedrock-primary-soft); }
+.bd-radius-item span { font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+
+.bd-theme-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 16px; }
+.bd-theme-bar .bd-note { margin: 0; }
+.bd-theme-tokens { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-bottom: 18px; }
+.bd-theme-tokens .bd-swatch__meta { font-size: var(--bedrock-fs-caption); }
+.bd-theme-tokens .bd-swatch__meta em { white-space: nowrap; }
+.bd-theme-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; align-items: start; }
+.bd-theme-grid .bd-label,
+.bd-theme-wide .bd-label { margin-bottom: 7px; }
+.bd-theme-grid .bd-code,
+.bd-theme-wide .bd-code { border: 1px solid var(--bedrock-line-1); border-radius: 3px; }
+.bd-theme-wide { margin-top: 14px; }
+.bd-theme-notes { margin-top: 12px; }
+.bd-theme-notes .bd-note { margin-top: 6px; }
+
+@media (max-width: 900px) {
+  .bd-theme-tokens { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bd-theme-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,59 @@
+/* ============================================================
+   Bedrock UI · Page Header
+   CSS only. Brand / nav / meta slots, inline or centered nav,
+   sm / md / lg heights, optional minimal frame.
+   ============================================================ */
+
+.bd-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 64px;
+  padding: 0 22px;
+  border-bottom: 1px solid var(--bedrock-line-1);
+  background: linear-gradient(90deg, rgba(8, 20, 30, .92), rgba(5, 13, 21, .7));
+}
+.bd-header__brand { display: flex; align-items: center; gap: 11px; min-width: 0; }
+.bd-header__mark { width: 28px; height: 28px; flex: none; color: var(--bedrock-primary); }
+.bd-header__name { font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-body); letter-spacing: .14em; color: var(--bedrock-text-1); }
+.bd-header__sub { margin-top: 2px; font-size: var(--bedrock-fs-caption); letter-spacing: .1em; color: var(--bedrock-text-4); }
+.bd-header__nav { display: flex; align-items: stretch; gap: 2px; margin-left: 18px; }
+.bd-header__link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px;
+  border-bottom: 1px solid transparent;
+  color: var(--bedrock-text-3);
+  font-size: var(--bedrock-fs-body);
+}
+.bd-header__link--active { color: var(--bedrock-primary); border-bottom-color: var(--bedrock-primary); }
+.bd-header__meta {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: none;
+  font-family: var(--bedrock-font-num);
+  font-size: var(--bedrock-fs-body);
+  color: var(--bedrock-text-4);
+}
+.bd-header__status { display: inline-flex; align-items: center; gap: 6px; }
+.bd-header__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--bedrock-success);
+  box-shadow: 0 0 5px rgba(var(--bedrock-success-rgb), .4);
+}
+.bd-header--center .bd-header__nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-left: 0;
+}
+.bd-header--plain { border-bottom: 0; background: transparent; }
+.bd-header--sm { height: 52px; padding: 0 16px; }
+.bd-header--sm .bd-header__name { font-size: var(--bedrock-fs-caption); }
+.bd-header--lg { height: 76px; padding: 0 28px; }
+.bd-header--lg .bd-header__name { font-size: var(--bedrock-fs-title); }

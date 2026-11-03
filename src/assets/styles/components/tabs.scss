@@ -1,0 +1,16 @@
+/* Bedrock UI · Tabs (Element Plus restyle) */
+.bd-tabs .el-tabs__header { margin-bottom: 12px; }
+.bd-tabs .el-tabs__nav-wrap::after { background: var(--bedrock-line-1); height: 1px; }
+.bd-tabs .el-tabs__item { height: 36px; padding: 0 14px; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-tabs .el-tabs__item.is-active { color: var(--bedrock-primary); }
+.bd-tabs .el-tabs__active-bar { background: var(--bedrock-primary); height: 1px; }
+.bd-tabs .el-tabs__item__count { margin-left: 6px; font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-tabs .el-tabs__content { padding-top: 2px; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-tabs--card .el-tabs__item { border: 1px solid var(--bedrock-line-1); border-bottom: 0; background: rgba(6, 16, 24, .35); }
+.bd-tabs--card .el-tabs__item.is-active { background: rgba(var(--bedrock-primary-rgb), .09); }
+.bd-tabs--pill .el-tabs__nav-wrap::after { display: none; }
+.bd-tabs--pill .el-tabs__nav { padding: 2px; border: 1px solid var(--bedrock-line-1); border-radius: 999px; background: rgba(6, 16, 24, .5); }
+.bd-tabs--pill .el-tabs__item { height: 28px; border-radius: 999px; }
+.bd-tabs--pill .el-tabs__item.is-active { background: rgba(var(--bedrock-primary-rgb), .12); }
+.bd-tabs--pill .el-tabs__active-bar { display: none; }
+.bd-tabs__panel { padding: 10px 12px; border: 1px solid var(--bedrock-line-1); border-radius: 3px; background: rgba(6, 16, 24, .3); }

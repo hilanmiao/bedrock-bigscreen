@@ -1,0 +1,104 @@
+/* Bedrock UI · Data rain */
+.bd-rain {
+  --bd-rain-accent: var(--bedrock-primary);
+  --bd-rain-rgb: var(--bedrock-primary-rgb);
+  --bd-rain-speed: 1;
+  --bd-rain-h: 300px;
+  position: relative;
+  height: var(--bd-rain-h);
+  overflow: hidden;
+  border: 1px solid var(--bedrock-line-1);
+  border-radius: 4px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(var(--bd-rain-rgb), .08), transparent 62%),
+    var(--bedrock-bg-1);
+}
+.bd-rain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, transparent 0 3px, rgba(0, 0, 0, .16) 3px 4px);
+  opacity: .35;
+}
+.bd-rain__fall {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 12% 88%, transparent);
+  mask-image: linear-gradient(180deg, transparent, #000 12% 88%, transparent);
+}
+.bd-rain__col {
+  position: absolute;
+  top: 0;
+  left: var(--x);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: max-content;
+  white-space: nowrap;
+  font-family: var(--bedrock-font-num);
+  font-size: var(--bedrock-fs-caption);
+  line-height: 1;
+  color: rgba(var(--bd-rain-rgb), .38);
+  opacity: var(--o, .5);
+  animation: bd-rain-fall calc(var(--t, 10s) * var(--bd-rain-speed)) linear infinite;
+  animation-delay: var(--d, 0s);
+}
+.bd-rain__col span { display: block; }
+.bd-rain__hot {
+  color: var(--bd-rain-accent);
+  text-shadow: 0 0 5px rgba(var(--bd-rain-rgb), .6);
+}
+.bd-rain__focus {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  pointer-events: none;
+  text-align: center;
+}
+.bd-rain__focus::before {
+  content: "";
+  position: absolute;
+  width: min(72%, 320px);
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(4, 9, 14, .92), transparent 72%);
+}
+.bd-rain__focus-value {
+  position: relative;
+  font-family: var(--bedrock-font-num);
+  font-size: var(--bedrock-fs-display);
+  line-height: 1;
+  color: var(--bedrock-text-1);
+  text-shadow: 0 0 18px rgba(var(--bd-rain-rgb), .45);
+}
+.bd-rain__focus-label {
+  position: relative;
+  font-size: var(--bedrock-fs-caption);
+  letter-spacing: .12em;
+  color: var(--bedrock-text-4);
+}
+.bd-rain--sm { --bd-rain-h: 220px; }
+.bd-rain--lg { --bd-rain-h: 380px; }
+.bd-rain--warn { --bd-rain-accent: var(--bedrock-warning); --bd-rain-rgb: var(--bedrock-warning-rgb); }
+.bd-rain--error { --bd-rain-accent: var(--bedrock-danger); --bd-rain-rgb: var(--bedrock-danger-rgb); }
+.bd-rain--slow { --bd-rain-speed: 1.7; }
+.bd-rain--fast { --bd-rain-speed: .55; }
+.bd-rain--sparse .bd-rain__col:nth-child(even) { display: none; }
+.bd-rain--paused .bd-rain__col { animation-play-state: paused; }
+
+@keyframes bd-rain-fall {
+  from { transform: translateY(-50%); }
+  to { transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bd-rain__col { animation: none; }
+}

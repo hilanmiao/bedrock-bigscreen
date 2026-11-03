@@ -1,0 +1,83 @@
+/* ============================================================
+   Bedrock UI · global baseline
+   Tokens / reset / typography / Element Plus variables only.
+   Component styles live next to their pages.
+   ============================================================ */
+
+:root, html.dark {
+  --bedrock-bg-0: #04090e;
+  --bedrock-bg-1: #07121a;
+  --bedrock-bg-2: #0a1a25;
+  --bedrock-line-1: rgba(125, 199, 255, .08);
+  --bedrock-line-2: rgba(125, 199, 255, .16);
+  --bedrock-line-3: rgba(125, 199, 255, .3);
+  --bedrock-text-1: #f3fbff;
+  --bedrock-text-2: #c0d7e5;
+  --bedrock-text-3: #90aabd;
+  --bedrock-text-4: #708b9d;
+  --bedrock-primary: #3fe0cf;
+  --bedrock-primary-2: #1fa4b8;
+  --bedrock-primary-soft: rgba(63, 224, 207, .12);
+  --bedrock-primary-line: rgba(63, 224, 207, .34);
+  --bedrock-primary-rgb: 63, 224, 207;
+  --bedrock-primary-light: #74f4e5;
+  --bedrock-primary-ink: #03201d;
+  --bedrock-accent: #f4b95e;
+  --bedrock-accent-rgb: 244, 185, 94;
+  --bedrock-accent-line: rgba(244, 185, 94, .36);
+  --bedrock-success: #4ade80;
+  --bedrock-success-rgb: 74, 222, 128;
+  --bedrock-warning: #f4b95e;
+  --bedrock-warning-rgb: 244, 185, 94;
+  --bedrock-danger: #fb7185;
+  --bedrock-danger-rgb: 251, 113, 133;
+  --bedrock-info: #5aa8ff;
+  --bedrock-info-rgb: 90, 168, 255;
+  --bedrock-font-ui: "HarmonyOS Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --bedrock-font-num: "Bahnschrift", "DIN Alternate", "Roboto Condensed", "Arial Narrow", var(--bedrock-font-ui);
+  --bedrock-font-mono: "JetBrains Mono", "Cascadia Mono", Consolas, monospace;
+  --bedrock-fs-caption: 12px;
+  --bedrock-fs-label: 13px;
+  --bedrock-fs-body: 14px;
+  --bedrock-fs-title: 16px;
+  --bedrock-fs-subhead: 18px;
+  --bedrock-fs-heading: 20px;
+  --bedrock-fs-metric: 24px;
+  --bedrock-fs-metric-lg: 28px;
+  --bedrock-fs-display: 32px;
+  --bedrock-fs-hero: 40px;
+  --bedrock-ease-out: cubic-bezier(.22, 1, .36, 1);
+  --bedrock-dur-fast: 180ms;
+
+  --el-color-primary: var(--bedrock-primary);
+  --el-color-success: var(--bedrock-success);
+  --el-color-warning: var(--bedrock-warning);
+  --el-color-danger: var(--bedrock-danger);
+  --el-color-info: var(--bedrock-text-3);
+  --el-bg-color: var(--bedrock-bg-1);
+  --el-bg-color-overlay: var(--bedrock-bg-2);
+  --el-text-color-primary: var(--bedrock-text-1);
+  --el-text-color-regular: var(--bedrock-text-2);
+  --el-border-color: var(--bedrock-line-2);
+  --el-border-color-light: var(--bedrock-line-1);
+  --el-fill-color-blank: transparent;
+  --el-font-size-extra-small: var(--bedrock-fs-caption);
+  --el-font-size-small: var(--bedrock-fs-label);
+  --el-font-size-base: var(--bedrock-fs-body);
+  --el-font-size-medium: var(--bedrock-fs-title);
+  --el-font-size-large: var(--bedrock-fs-heading);
+}
+
+html, body, #app { height: 100%; }
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+body {
+  margin: 0;
+  background: var(--bedrock-bg-0);
+  color: var(--bedrock-text-1);
+  font-family: var(--bedrock-font-ui);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+a { color: inherit; cursor: pointer; text-decoration: none; }
+aside { margin: 0; padding: 0; background: none; }

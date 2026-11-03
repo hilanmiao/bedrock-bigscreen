@@ -1,0 +1,19 @@
+/* Bedrock UI · Video tile */
+.bd-video { position: relative; display: flex; flex-direction: column; min-width: 0; overflow: hidden; border: 1px solid var(--bedrock-line-2); border-radius: 3px; background: #03080d; }
+.bd-video__scene { position: relative; flex: 1; min-height: 170px; background: radial-gradient(ellipse 60% 60% at 52% 44%, rgba(var(--bedrock-primary-rgb), .12), transparent 65%), linear-gradient(160deg, #071b25, #02070c 62%); overflow: hidden; }
+.bd-video__scene::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(255,255,255,.025) 0 1px, transparent 1px 4px); }
+.bd-video__scene::after { content: ""; position: absolute; left: -20%; right: -20%; top: 55%; height: 34%; background: radial-gradient(ellipse at center, rgba(var(--bedrock-primary-rgb), .12), transparent 65%); border-top: 1px solid rgba(var(--bedrock-primary-rgb), .16); }
+.bd-video__top { position: absolute; z-index: 1; inset: 9px 10px auto; display: flex; align-items: center; gap: 7px; font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-video__live { display: inline-flex; align-items: center; gap: 5px; color: var(--bedrock-success); }
+.bd-video__live::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: currentColor; box-shadow: 0 0 5px rgba(var(--bedrock-success-rgb), .4); animation: bd-video-blink 1.4s infinite; }
+.bd-video__id { margin-left: auto; color: var(--bedrock-text-4); }
+.bd-video__hud { position: absolute; z-index: 1; left: 10px; bottom: 10px; display: flex; gap: 8px; }
+.bd-video__hud span { padding: 2px 6px; border: 1px solid rgba(var(--bedrock-primary-rgb), .24); border-radius: 2px; background: rgba(3, 10, 16, .55); font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); color: var(--bedrock-primary); }
+.bd-video__foot { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-top: 1px solid var(--bedrock-line-1); font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-video__name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--bedrock-text-2); }
+.bd-video__status { margin-left: auto; font-family: var(--bedrock-font-num); color: var(--bedrock-success); }
+.bd-video--offline .bd-video__scene { filter: grayscale(.7) brightness(.7); }
+.bd-video--offline .bd-video__live { color: var(--bedrock-danger); }
+.bd-video--offline .bd-video__status { color: var(--bedrock-danger); }
+.bd-video--offline .bd-video__live::before { box-shadow: 0 0 5px rgba(var(--bedrock-danger-rgb), .4); animation: none; }
+@keyframes bd-video-blink { 50% { opacity: .2; } }

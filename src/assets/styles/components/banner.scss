@@ -1,0 +1,21 @@
+/* Bedrock UI · Emergency banner */
+.bd-banner { position: relative; display: flex; align-items: center; gap: 11px; min-height: 46px; padding: 0 14px; overflow: hidden; border: 1px solid var(--bedrock-line-2); border-radius: 3px; background: linear-gradient(90deg, rgba(125, 199, 255, .05), transparent 62%); }
+.bd-banner--warn { border-color: var(--bedrock-accent-line); background: linear-gradient(90deg, rgba(244, 185, 94, .14), transparent 64%); }
+.bd-banner--critical { border-color: rgba(251, 113, 133, .38); background: linear-gradient(90deg, rgba(251, 113, 133, .14), transparent 64%); }
+.bd-banner__icon { width: 26px; height: 26px; flex: none; display: grid; place-items: center; border: 1px solid var(--bedrock-line-2); border-radius: 50%; color: var(--bedrock-primary); }
+.bd-banner--warn .bd-banner__icon { color: var(--bedrock-warning); border-color: var(--bedrock-accent-line); }
+.bd-banner--critical .bd-banner__icon { color: var(--bedrock-danger); border-color: rgba(251, 113, 133, .4); }
+.bd-banner__icon svg { width: 14px; height: 14px; }
+.bd-banner__body { flex: 1; min-width: 0; display: flex; align-items: baseline; gap: 9px; }
+.bd-banner__title { font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-1); white-space: nowrap; }
+.bd-banner__desc { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-banner__actions { display: flex; align-items: center; gap: 7px; flex: none; }
+.bd-banner__status { display: inline-flex; align-items: center; gap: 5px; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-banner__status::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--bedrock-warning); box-shadow: 0 0 5px rgba(var(--bedrock-warning-rgb), .4); }
+.bd-banner__action { padding: 3px 8px; border: 1px solid var(--bedrock-primary-line); border-radius: 2px; color: var(--bedrock-primary); font-size: var(--bedrock-fs-caption); background: rgba(var(--bedrock-primary-rgb), .08); }
+.bd-banner--critical .bd-banner__action { border-color: rgba(251, 113, 133, .45); color: var(--bedrock-danger); background: rgba(251, 113, 133, .08); }
+.bd-banner--stacked { align-items: flex-start; padding: 10px 14px; }
+.bd-banner--stacked .bd-banner__body { flex-direction: column; align-items: flex-start; gap: 3px; }
+.bd-banner--stacked .bd-banner__desc { white-space: normal; line-height: 1.55; }
+.bd-banner--pulse .bd-banner__icon { animation: bd-banner-pulse 1.8s ease-in-out infinite; }
+@keyframes bd-banner-pulse { 50% { box-shadow: 0 0 10px rgba(251, 113, 133, .3); } }

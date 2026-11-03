@@ -1,0 +1,15 @@
+/* Bedrock UI · Table (Element Plus restyle) */
+.bd-table { --el-table-bg-color: transparent; --el-table-tr-bg-color: transparent; --el-table-row-hover-bg-color: rgba(var(--bedrock-primary-rgb), .05); --el-table-header-bg-color: rgba(8, 20, 30, .7); --el-table-border-color: var(--bedrock-line-1); --el-table-text-color: var(--bedrock-text-2); --el-table-header-text-color: var(--bedrock-text-4); }
+.bd-table .el-table__header th { height: 34px; font-size: var(--bedrock-fs-caption); font-weight: 500; letter-spacing: .06em; }
+.bd-table .el-table__body td { height: 36px; font-size: var(--bedrock-fs-caption); }
+.bd-table .el-table__inner-wrapper::before { display: none; }
+.bd-table__status { display: inline-flex; align-items: center; gap: 5px; font-size: var(--bedrock-fs-caption); }
+.bd-table__status::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--bedrock-success); box-shadow: 0 0 5px rgba(var(--bedrock-success-rgb), .4); }
+.bd-table__status--warn::before { background: var(--bedrock-warning); box-shadow: 0 0 5px rgba(var(--bedrock-warning-rgb), .4); }
+.bd-table__status--error::before { background: var(--bedrock-danger); box-shadow: 0 0 5px rgba(var(--bedrock-danger-rgb), .4); }
+.bd-table__num { font-family: var(--bedrock-font-num); color: var(--bedrock-text-1); }
+
+.bd-table { --el-fill-color-lighter: rgba(125, 199, 255, .035); --el-fill-color-light: rgba(125, 199, 255, .05); --el-fill-color-blank: transparent; }
+.bd-table .el-table__body tr.el-table__row--striped td.el-table__cell { background: rgba(125, 199, 255, .03); }
+.bd-table .el-table__body tr:hover > td.el-table__cell { background: rgba(125, 199, 255, .055); }
+.bd-table--auto .el-scrollbar__bar { display: none; }

@@ -1,0 +1,28 @@
+/* Bedrock UI · Empty / error / loading states */
+.bd-state { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 18px; text-align: center; }
+.bd-state__icon { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid var(--bedrock-line-2); border-radius: 50%; color: var(--bedrock-text-3); background: rgba(4, 11, 17, .32); }
+.bd-state__icon svg { width: 20px; height: 20px; }
+.bd-state--error .bd-state__icon { color: var(--bedrock-danger); border-color: rgba(251, 113, 133, .3); background: rgba(251, 113, 133, .08); }
+.bd-state__title { font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-1); }
+.bd-state__desc { max-width: 250px; font-size: var(--bedrock-fs-caption); line-height: 1.55; color: var(--bedrock-text-4); }
+.bd-state--sm { gap: 5px; padding: 10px; }
+.bd-state--sm .bd-state__icon { width: 30px; height: 30px; }
+.bd-state--sm .bd-state__icon svg { width: 15px; height: 15px; }
+.bd-state--inline { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; justify-items: start; column-gap: 10px; }
+.bd-state--inline .bd-state__icon { grid-row: 1 / 3; }
+.bd-state--inline .bd-state__desc { max-width: none; }
+.bd-state__spinner { width: 18px; height: 18px; border: 2px solid var(--bedrock-primary-line); border-top-color: var(--bedrock-primary); border-radius: 50%; animation: bd-state-spin .8s linear infinite; }
+.bd-state__spinner--dual { border-bottom-color: var(--bedrock-warning); }
+.bd-skeleton { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+.bd-skeleton i { display: block; height: 10px; border-radius: 2px; background: linear-gradient(90deg, rgba(125, 199, 255, .05), rgba(125, 199, 255, .14), rgba(125, 199, 255, .05)); background-size: 200% 100%; animation: bd-skeleton-shimmer 1.6s linear infinite; }
+@keyframes bd-state-spin { to { transform: rotate(360deg); } }
+@keyframes bd-skeleton-shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+.bd-state-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.bd-state-grid > div { min-height: 150px; border: 1px solid var(--bedrock-line-1); border-radius: 3px; background: rgba(6, 16, 24, .4); }
+.bd-loaders { display: flex; align-items: center; justify-content: space-around; gap: 16px; }
+.bd-dots { display: inline-flex; gap: 5px; }
+.bd-dots i { width: 5px; height: 5px; border-radius: 50%; background: var(--bedrock-primary); animation: bd-dot 1s ease-in-out infinite; }
+.bd-dots i:nth-child(2) { animation-delay: .15s; }
+.bd-dots i:nth-child(3) { animation-delay: .3s; }
+.bd-dots i:nth-child(4) { animation-delay: .45s; }
+@keyframes bd-dot { 50% { opacity: .2; } }

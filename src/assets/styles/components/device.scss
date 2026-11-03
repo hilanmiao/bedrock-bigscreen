@@ -1,0 +1,18 @@
+/* Bedrock UI · Device card */
+.bd-device { position: relative; display: flex; flex-direction: column; gap: 10px; padding: 12px; border: 1px solid var(--bedrock-line-1); border-radius: 3px; background: linear-gradient(145deg, rgba(20, 48, 68, .46), rgba(6, 16, 24, .68)); }
+.bd-device__top { display: flex; align-items: center; gap: 8px; }
+.bd-device__icon { width: 30px; height: 30px; flex: none; display: grid; place-items: center; border: 1px solid var(--bedrock-line-2); border-radius: 50%; color: var(--bedrock-primary); }
+.bd-device__icon svg { width: 15px; height: 15px; }
+.bd-device__name { min-width: 0; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-1); }
+.bd-device__sub { margin-top: 2px; font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-device__status { margin-left: auto; display: inline-flex; align-items: center; gap: 5px; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-device__status::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--bedrock-success); box-shadow: 0 0 5px rgba(var(--bedrock-success-rgb), .4); }
+.bd-device--warn .bd-device__status::before { background: var(--bedrock-warning); box-shadow: 0 0 5px rgba(var(--bedrock-warning-rgb), .4); }
+.bd-device--error .bd-device__status::before { background: var(--bedrock-danger); box-shadow: 0 0 5px rgba(var(--bedrock-danger-rgb), .4); }
+.bd-device__metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.bd-device__metrics div { padding: 7px 8px; border: 1px solid var(--bedrock-line-1); border-radius: 2px; background: rgba(4, 11, 17, .28); }
+.bd-device__metrics span { display: block; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-4); }
+.bd-device__metrics b { display: block; margin-top: 3px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-title); font-weight: 500; color: var(--bedrock-text-1); }
+.bd-device--compact { flex-direction: row; align-items: center; gap: 9px; padding: 8px 10px; }
+.bd-device--compact .bd-device__metrics { display: none; }
+.bd-device--compact .bd-device__top { flex: 1; min-width: 0; }

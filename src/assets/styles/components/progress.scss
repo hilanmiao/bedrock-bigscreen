@@ -1,0 +1,18 @@
+/* Bedrock UI · Progress list */
+.bd-progress { --bd-progress-rgb: var(--bedrock-primary-rgb); display: flex; flex-direction: column; gap: 12px; }
+.bd-progress__row { display: grid; grid-template-columns: 116px minmax(0, 1fr) 44px; align-items: center; gap: 10px; }
+.bd-progress__label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-progress__track { position: relative; height: 7px; border-radius: 1px; background: var(--bedrock-line-1); }
+.bd-progress__fill { position: absolute; inset: 0 auto 0 0; width: var(--p); border-radius: inherit; background: var(--bd-progress-accent, var(--bedrock-primary)); box-shadow: 0 0 6px rgba(var(--bd-progress-rgb), .55), 0 0 20px rgba(var(--bd-progress-rgb), .3); }
+.bd-progress__value { text-align: right; font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-2); }
+.bd-progress__row--warn { --bd-progress-accent: var(--bedrock-warning); --bd-progress-rgb: var(--bedrock-warning-rgb); }
+.bd-progress__row--error { --bd-progress-accent: var(--bedrock-danger); --bd-progress-rgb: var(--bedrock-danger-rgb); }
+.bd-progress__row--warn .bd-progress__value { color: var(--bedrock-warning); }
+.bd-progress__row--error .bd-progress__value { color: var(--bedrock-danger); }
+.bd-progress--segmented .bd-progress__fill {
+  background: repeating-linear-gradient(90deg, var(--bd-progress-accent, var(--bedrock-primary)) 0 10px, transparent 10px 14px);
+}
+.bd-progress--thin .bd-progress__track { height: 3px; }
+.bd-progress--compact { gap: 8px; }
+.bd-progress--compact .bd-progress__row { grid-template-columns: 96px minmax(0, 1fr) 38px; gap: 8px; }
+.bd-progress--compact .bd-progress__label { font-size: var(--bedrock-fs-caption); }

@@ -1,0 +1,50 @@
+/* ============================================================
+   Bedrock UI · style entry
+   Global baseline + documentation shell + component styles.
+   ============================================================ */
+
+@use './bedrock';
+@use './docs';
+@use './components/button';
+@use './components/divider';
+@use './components/section-title';
+@use './components/background';
+@use './components/panel';
+@use './components/header';
+@use './components/screen';
+@use './components/metric';
+@use './components/kpi';
+@use './components/progress';
+@use './components/bullet';
+@use './components/ring';
+@use './components/flip';
+@use './components/rank';
+@use './components/timeline';
+@use './components/matrix';
+@use './components/device';
+@use './components/alert';
+@use './components/marquee';
+@use './components/event';
+@use './components/banner';
+@use './components/bell';
+@use './components/states';
+@use './components/video-tile';
+@use './components/switch';
+@use './components/slider';
+@use './components/tabs';
+@use './components/select';
+@use './components/segmented';
+@use './components/dialog';
+@use './components/tooltip';
+@use './components/toast';
+@use './components/drawer';
+@use './components/table';
+@use './components/radar-scan';
+@use './components/flow-border';
+@use './components/turn-card';
+@use './components/spectrum';
+@use './components/orbit';
+@use './components/pulse-wave';
+@use './components/data-rain';
+@use './readability';
+@use './themes/blue';

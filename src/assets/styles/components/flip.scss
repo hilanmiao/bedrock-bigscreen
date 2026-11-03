@@ -1,0 +1,12 @@
+/* Bedrock UI · Flip counter (static composition) */
+.bd-flip { display: inline-flex; align-items: flex-end; gap: 3px; }
+.bd-flip__digit { display: grid; place-items: center; min-width: 33px; height: 46px; padding: 0 4px; border: 1px solid var(--bedrock-line-2); border-radius: 2px; background: linear-gradient(180deg, rgba(20, 46, 64, .84), rgba(7, 18, 27, .96)); font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-metric-lg); line-height: 1; color: var(--bedrock-text-1); position: relative; text-shadow: 0 0 10px rgba(var(--bedrock-primary-rgb), .22); }
+.bd-flip__digit::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(4, 9, 14, .75); }
+.bd-flip__suffix { margin-left: 5px; padding-bottom: 5px; font-size: var(--bedrock-fs-caption); color: var(--bedrock-text-3); }
+.bd-flip--outline .bd-flip__digit { background: transparent; }
+.bd-flip--plain .bd-flip__digit { border-color: transparent; background: transparent; text-shadow: none; }
+.bd-flip--plain .bd-flip__digit::after { display: none; }
+.bd-flip--sm .bd-flip__digit { min-width: 25px; height: 36px; font-size: var(--bedrock-fs-heading); }
+.bd-flip--lg .bd-flip__digit { min-width: 42px; height: 58px; font-size: var(--bedrock-fs-display); }
+.bd-flip-row { display: flex; flex-direction: column; gap: 16px; }
+.bd-flip__meta { margin-top: 8px; font-family: var(--bedrock-font-num); font-size: var(--bedrock-fs-caption); color: var(--bedrock-success); }
